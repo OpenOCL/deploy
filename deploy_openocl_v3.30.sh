@@ -1,5 +1,6 @@
 
 git clone https://github.com/OpenOCL/OpenOCL.git
+git checkout tags/v3.30
 
 wget https://github.com/casadi/casadi/releases/download/3.3.0/linux__casadi-matlabR2014b-v3.3.0.tar.gz
 wget https://github.com/casadi/casadi/releases/download/3.3.0/linux__casadi-octave-v3.3.0.tar.gz
