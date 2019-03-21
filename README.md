@@ -11,10 +11,26 @@ Deployments script requires curl.
 ```
 sh deploy_openocl_v3-41.sh
 ```
+Software in OpenOCL:
 
+* casadi, LGPL 3
 
 Software included in casadi?   
-: ipopt, blasfeo, hpmpc, qpoases, sundials cvodes/idas, lapack, HSL for ipopt/ ma27,  bonmin . 
+
+* ipopt, Eclipse Public License - v 1.0, several
+* blasfeo, GPL 3
+* hpmpc, LGPL 3
+* qpoases, LGPL 3
+* sundials cvodes/idas, BSD 3-Clause License
+* lapack, BSD 3-Clause License modified
+* HSL for ipopt/ ma27 
+* bonmin, Eclipse Public License - v 1.0
 
 Software not included in casadi?   
-: slicot, cplex, gurobi, worhp, knitro, snopt
+
+* slicot, GPL 3
+* cplex
+* gurobi 
+* worhp 
+* knitro
+* snopt
