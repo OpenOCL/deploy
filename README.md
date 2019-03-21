@@ -32,7 +32,7 @@ Software included in casadi?
 * sIPOPT 
 * SWIG
 
-Software not included in casadi?   
+Software interfaced but not included in casadi?   
 
 * slicot, GPL 3
 * cplex
