@@ -14,4 +14,4 @@ sh deploy_openocl_v3-41.sh
 
 
 Software used by casadi:
-blasfeo, conic clp, cplex, gurobi, hpmpc, nlpsol, qpoases, qrqp, slicot, sundials cvodes/idas, lapack, ldl, lsqr, ma27, qr, bonmin, snopt. 
+blasfeo, cplex, gurobi, hpmpc, qpoases, slicot, sundials cvodes/idas, lapack, HSL for ipopt/ ma27,  bonmin, snopt. 
