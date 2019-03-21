@@ -27,6 +27,10 @@ Software included in casadi?
 * bonmin, Eclipse Public License - v 1.0
 * CSparse LGPL 2.1
 * OpenBLAS BSD 3-Clause License
+* Mumps
+* Metis
+* sIPOPT 
+* SWIG
 
 Software not included in casadi?   
 
