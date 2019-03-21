@@ -25,6 +25,7 @@ Software included in casadi?
 * lapack, BSD 3-Clause License modified
 * HSL for ipopt/ ma27 
 * bonmin, Eclipse Public License - v 1.0
+* CSparse LGPL 2.1
 
 Software not included in casadi?   
 
