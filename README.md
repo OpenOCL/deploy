@@ -13,5 +13,8 @@ sh deploy_openocl_v3-41.sh
 ```
 
 
-Software used by casadi:
-blasfeo, cplex, gurobi, hpmpc, qpoases, slicot, sundials cvodes/idas, lapack, HSL for ipopt/ ma27,  bonmin, snopt. 
+Software included in casadi?
+blasfeo, hpmpc, qpoases, sundials cvodes/idas, lapack, HSL for ipopt/ ma27,  bonmin . 
+
+Software not included in casadi?
+slicot, cplex, gurobi, worhp, knitro, snopt
