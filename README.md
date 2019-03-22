@@ -11,6 +11,9 @@ Deployments script requires curl.
 ```
 sh deploy_openocl_v3-41.sh
 ```
+
+# Software licenses
+
 Software in OpenOCL:
 
 * casadi, LGPL 3
