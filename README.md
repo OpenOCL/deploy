@@ -17,17 +17,17 @@ Software in OpenOCL:
 
 Software included in casadi?   
 
-* ipopt, Eclipse Public License - v 1.0, several
-* blasfeo, GPL 3 with the Classpath Exception
-* hpmpc, LGPL 3
+* ipopt Eclipse Public License - v 1.0, several
+* blasfeo GPL 3 with the Classpath Exception
+* hpmpc LGPL 3
 * qpoases, LGPL 3
-* sundials cvodes/idas, BSD 3-Clause License
-* lapack, BSD 3-Clause License modified
+* sundials cvodes/idas BSD 3-Clause License
+* lapack BSD 3-Clause License modified
 * HSL for ipopt/ ma27 
-* bonmin, Eclipse Public License - v 1.0
+* bonmin Eclipse Public License - v 1.0
 * CSparse LGPL 2.1
 * OpenBLAS BSD 3-Clause License
-* Mumps
+* Mumps CeCILL-C
 * Metis
 * sIPOPT 
 * SWIG
