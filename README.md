@@ -29,8 +29,8 @@ Software included in casadi?
 * OpenBLAS BSD 3-Clause License
 * Mumps CeCILL-C
 * Metis Apache License, Version 2.0
-* sIPOPT 
-* SWIG
+* sIPOPT (merged with ipopt)
+* SWIG GPL 3, multiple, LICENSE-UNIVERSITIES 
 
 Software interfaced but not included in casadi?   
 
@@ -119,4 +119,11 @@ http://www.cise.ufl.edu/research/sparse/CSparse
 How to cite METIS?
 “A Fast and Highly Quality Multilevel Scheme for Partitioning Irregular Graphs”. George Karypis and Vipin Kumar. SIAM Journal on Scientific Computing, Vol. 20, No. 1, pp. 359—392, 1999.
 
+## SWIG
+
+SWIG Copyright and Authors
+Copyright (c) 1995-2011 The SWIG Developers
+Copyright (c) 2005-2006 Arizona Board of Regents (University of Arizona).
+Copyright (c) 1998-2005 University of Chicago.
+Copyright (c) 1995-1998 The University of Utah and the Regents of the University of California
 
