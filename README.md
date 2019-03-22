@@ -20,7 +20,7 @@ Software in OpenOCL:
 
 Software included in casadi?   
 
-* ipopt Eclipse Public License - v 1.0, several
+* ipopt version 3.12, Eclipse Public License - v 1.0, several
 * blasfeo GPL 3 with the Classpath Exception
 * hpmpc LGPL 3
 * qpoases, LGPL 3
@@ -57,6 +57,22 @@ If you use CasADi in your academic work, please cite the following paper:
   Journal = {Mathematical Programming Computation},
   Year = {In Press, 2018},
 }
+
+## ipopt
+Please Cite Us
+We provide this program in the hope that it may be useful to others, and we would very much like to hear about your experience with it. If you found it helpful and are using it within our software, we encourage you to add your feedback to the Success Stories page.
+
+Since a lot of time and effort has gone into Ipopt's development, please cite the following publication if you are using Ipopt for your own research:
+
+A. Wächter and L. T. Biegler, On the Implementation of a Primal-Dual Interior Point Filter Line Search Algorithm for Large-Scale Nonlinear Programming, Mathematical Programming 106(1), pp. 25-57, 2006
+(preprint)
+
+As open source software, the source code for Ipopt is provided without charge. You are free to use it, also for commercial purposes. You are also free to modify the source code (with the restriction that you need to make your changes public if you decide to distribute your version in any way, e.g. as an executable); for details see the EPL license. And we are certainly very keen on feedback from users, including contributions!
+
+In order to compile Ipopt, certain third party code is required (such as some linear algebra routines). Those are available under different conditions/licenses.
+
+IPOPT uses a few external packages that are not included in the IPOPT source code distribution, namely ASL (the AMPL Solver Library if you want to compile the IPOPT AMPL solver executable), Blas, Lapack.
+Since this third party software is released under different licenses than IPOPT, we cannot distribute their code together with the IPOPT packages and have to ask you to go through the hassle of obtaining it yourself (even though we tried to make it as easy for you as we could). Keep in mind that it is still your responsibility to ensure that your downloading and usage of the third party components conforms with their licenses.
 
 ## Blasfeo
 
