@@ -1,4 +1,18 @@
 sudo apt-get install liboctave-dev -y
+sudo apt-get install autotools-dev automake -y
+sudo apt-get install libpcre3 libpcre3-dev -y
+sudo apt-get install bison flex -y
+
+git clone https://github.com/jaeandersson/swig.git swig_matlab --depth=1
+cd swig_matlab
+git checkout -b origin/matlab-customdoc
+sh autogen.sh
+./configure --prefix=/tmp/swig_matlab
+make -j4
+make install
+export PATH=$PATH:/tmp/swig_matlab/bin
+
+cd ..
 
 rm -rf build
 mkdir build
