@@ -20,6 +20,8 @@ sh deploy_openocl_v3-41.sh
 * LAPACK (through ipopt) http://www.netlib.org/lapack
 * Metis (through ipopt) http://glaros.dtc.umn.edu/gkhome/metis/metis/overview
 * MUMPS (through ipopt) http://graal.ens-lyon.fr/MUMPS/
+* Ipopt  https://www.coin-or.org/Ipopt/
+* Swig Matlab through https://github.com/jaeandersson/swig.git
 
 ## Full casadi installation
 
