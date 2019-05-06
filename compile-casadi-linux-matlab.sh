@@ -1,19 +1,14 @@
+# cmake 2.8
+wget http://www.cmake.org/files/v2.8/cmake-2.8.12.tar.gz
+tar xzf cmake-2.8.12.tar.gz
+cd cmake-2.8.12
+./configure --prefix=$HOME/cmake-install
+make 
+make install
+export PATH=$HOME/cmake-install/bin:$PATH
+
 sudo apt-get install p7zip-full -y
 sudo apt-get install bison -y
-
-# setup miniconda
-#wget http://repo.continuum.io/miniconda/Miniconda2-4.3.21-Linux-x86_64.sh -O miniconda.sh
-#chmod +x miniconda.sh
-#./miniconda.sh -b
-#export PATH=$HOME/miniconda2/bin:$PATH
-#conda create --quiet --yes -n casadi python=2.7 requests pyyaml libgcc
-#conda install --quiet --yes -n casadi pip
-#source activate casadi
-#pip install --quiet pysftp
-#pip install cryptography
-#pip install requests==2.6.0
-#pip install psutil
-#pip install pyaml
 
 # get ipopt
 wget http://www.coin-or.org/download/source/Ipopt/Ipopt-3.12.3.tgz
@@ -72,14 +67,16 @@ testbot/recipes/fetch.sh matlab$MATLABRELEASE.tar.gz
 mkdir matlab
 tar -xf matlab$MATLABRELEASE.tar.gz -C matlab
 cd ..
+
+# compile
+git clone https://github.com/casadi/casadi.git --depth=1
 cd casadi
+git submodule init
+git submodule update
 mkdir build
 mkdir -p build/swig/matlab/ 
 touch build/swig/matlab/SwigGet.m
-
-# compile
 cd build
-export casadi_build_flags="$casadi_build_flags -DWITH_OSQP=ON -DWITH_THREAD_MINGW=ON -DWITH_THREAD=ON -DWITH_AMPL=ON -DCMAKE_BUILD_TYPE=Release -DWITH_SO_VERSION=OFF -DWITH_NO_QPOASES_BANNER=ON -DWITH_COMMON=ON -DWITH_HPMPC=ON -DWITH_BUILD_HPMPC=ON -DWITH_BLASFEO=ON -DWITH_BUILD_BLASFEO=ON -DINSTALL_INTERNAL_HEADERS=ON"
-cmake -DWITH_IPOPT=ON -DWITH_OPENMP=OFF -DWITH_SELFCONTAINED=ON -DCMAKE_INSTALL_PREFIX=$MATLABPATH -DWITH_DEEPBIND=ON -DWITH_MATLAB=ON  -DWITH_DOC=ON -DWITH_EXAMPLES=ON -DWITH_EXTRA_WARNINGS=ON ..
+cmake -DWITH_OSQP=ON -DWITH_THREAD_MINGW=ON -DWITH_THREAD=ON -DWITH_AMPL=ON -DCMAKE_BUILD_TYPE=Release -DWITH_SO_VERSION=OFF -DWITH_NO_QPOASES_BANNER=ON -DWITH_COMMON=ON -DWITH_HPMPC=ON -DWITH_BUILD_HPMPC=ON -DWITH_BLASFEO=ON -DWITH_BUILD_BLASFEO=ON -DINSTALL_INTERNAL_HEADERS=ON -DWITH_IPOPT=ON -DWITH_OPENMP=OFF -DWITH_SELFCONTAINED=ON -DCMAKE_INSTALL_PREFIX=$MATLABPATH -DWITH_DEEPBIND=ON -DWITH_MATLAB=ON  -DWITH_DOC=ON -DWITH_EXAMPLES=ON -DWITH_EXTRA_WARNINGS=ON ..
 make VERBOSE=1
 make install VERBOSE=1
