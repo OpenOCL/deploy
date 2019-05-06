@@ -1,6 +1,23 @@
+sudo apt-get install p7zip-full -y
+sudo apt-get install bison -y
+
+# setup miniconda
+#wget http://repo.continuum.io/miniconda/Miniconda2-4.3.21-Linux-x86_64.sh -O miniconda.sh
+#chmod +x miniconda.sh
+#./miniconda.sh -b
+#export PATH=$HOME/miniconda2/bin:$PATH
+#conda create --quiet --yes -n casadi python=2.7 requests pyyaml libgcc
+#conda install --quiet --yes -n casadi pip
+#source activate casadi
+#pip install --quiet pysftp
+#pip install cryptography
+#pip install requests==2.6.0
+#pip install psutil
+#pip install pyaml
+
 # get ipopt
 wget http://www.coin-or.org/download/source/Ipopt/Ipopt-3.12.3.tgz
-tar -xvf Ipopt-3.12.3.tgz
+tar -xf Ipopt-3.12.3.tgz
 cd Ipopt-3.12.3
 cd ThirdParty
 
@@ -27,17 +44,16 @@ mkdir $HOME/ipopt-install
 ../configure coin_skip_warn_cxxflags=yes --prefix=$HOME/ipopt-install --disable-shared ADD_FFLAGS=-fPIC ADD_CFLAGS=-fPIC ADD_CXXFLAGS=-fPIC --with-blas=BUILD --with-lapack=BUILD --with-mumps=BUILD --with-metis=BUILD --without-hsl --without-asl
 make
 make install
-
-tar -zcvf ipopt.tar.gz -C $HOME/ipopt-install .
+cd ..
+cd ..
 
 # swig matlab
 sudo apt-get install -y libpcre3-dev automake yodl
-cd restricted 
 git clone https://github.com/jaeandersson/swig.git
 cd swig 
-git checkout $BAKEVERSION 
+git checkout 82714bf35c33fe2 
 ./autogen.sh 
-./configure --prefix=$mypwd/swig-matlab-install 
+./configure --prefix=$HOME/swig-matlab-install 
 make 
 make install
 cd ..
@@ -70,6 +86,7 @@ mkdir build
 mkdir -p build/swig/matlab/ 
 touch build/swig/matlab/SwigGet.m
 cd build
+export casadi_build_flags="$casadi_build_flags -DWITH_OSQP=ON -DWITH_THREAD_MINGW=ON -DWITH_THREAD=ON -DWITH_AMPL=ON -DCMAKE_BUILD_TYPE=Release -DWITH_SO_VERSION=OFF -DWITH_NO_QPOASES_BANNER=ON -DWITH_COMMON=ON -DWITH_HPMPC=ON -DWITH_BUILD_HPMPC=ON -DWITH_BLASFEO=ON -DWITH_BUILD_BLASFEO=ON -DINSTALL_INTERNAL_HEADERS=ON"
 cmake -DWITH_IPOPT=ON -DWITH_OPENMP=OFF -DWITH_SELFCONTAINED=ON -DCMAKE_INSTALL_PREFIX=$MATLABPATH -DWITH_DEEPBIND=ON -DWITH_MATLAB=ON  -DWITH_DOC=ON -DWITH_EXAMPLES=ON -DWITH_EXTRA_WARNINGS=ON ..
 make VERBOSE=1
 make install VERBOSE=1
