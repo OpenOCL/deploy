@@ -57,26 +57,17 @@ git checkout 82714bf35c33fe2
 make 
 make install
 cd ..
-cd ..
 
 # setup compiler
 sudo apt-get update -qq
-sudo apt-get install -y binutils gcc-4.7 g++-4.7 gfortran-4.7 git cmake liblapack-dev ipython python-dev python-numpy python-scipy python-matplotlib libmumps-seq-dev libblas-dev liblapack-dev libxml2-dev
-export CC=gcc-4.7
-export CXX=g++-4.7
-export FC=gfortran-4.7
-sudo apt-get install fakeroot rpm alien
+sudo apt-get install -y binutils gcc g++ gfortran git cmake liblapack-dev ipython python-dev python-numpy python-scipy python-matplotlib libmumps-seq-dev libblas-dev liblapack-dev libxml2-dev
+sudo apt-get install -y fakeroot rpm alien
 
-export SWIG_HOME=$HOME/build/swig_matlab
+export SWIG_HOME=$HOME/swig-matlab-install 
 export PATH=$SWIG_HOME/bin:$SWIG_HOME/share:$PATH
-
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$HOME/ipopt-install/lib/pkgconfig
-cd $HOME
-ln -s  $HOME/build/ipopt ipopt-install
-cd ..
 
-# compile
-cd /home/travis/build/
+# get matlab
 testbot/recipes/fetch.sh matlab$MATLABRELEASE.tar.gz
 mkdir matlab
 tar -xf matlab$MATLABRELEASE.tar.gz -C matlab
@@ -85,6 +76,8 @@ cd casadi
 mkdir build
 mkdir -p build/swig/matlab/ 
 touch build/swig/matlab/SwigGet.m
+
+# compile
 cd build
 export casadi_build_flags="$casadi_build_flags -DWITH_OSQP=ON -DWITH_THREAD_MINGW=ON -DWITH_THREAD=ON -DWITH_AMPL=ON -DCMAKE_BUILD_TYPE=Release -DWITH_SO_VERSION=OFF -DWITH_NO_QPOASES_BANNER=ON -DWITH_COMMON=ON -DWITH_HPMPC=ON -DWITH_BUILD_HPMPC=ON -DWITH_BLASFEO=ON -DWITH_BUILD_BLASFEO=ON -DINSTALL_INTERNAL_HEADERS=ON"
 cmake -DWITH_IPOPT=ON -DWITH_OPENMP=OFF -DWITH_SELFCONTAINED=ON -DCMAKE_INSTALL_PREFIX=$MATLABPATH -DWITH_DEEPBIND=ON -DWITH_MATLAB=ON  -DWITH_DOC=ON -DWITH_EXAMPLES=ON -DWITH_EXTRA_WARNINGS=ON ..
