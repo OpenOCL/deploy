@@ -14,6 +14,14 @@ sh deploy_openocl_v3-41.sh
 
 # Software licenses
 
+## Minimal
+
+* BLAS (through ipopt) http://www.netlib.org/blas
+* LAPACK (through ipopt) http://www.netlib.org/lapack
+* ASL (through ipopt) http://www.netlib.org/ampl/solvers/
+
+## Full casadi installation
+
 Software in OpenOCL:
 
 * casadi, LGPL 3
