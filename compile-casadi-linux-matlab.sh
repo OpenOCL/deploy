@@ -1,14 +1,8 @@
-# cmake 2.8
-wget http://www.cmake.org/files/v2.8/cmake-2.8.12.tar.gz
-tar xzf cmake-2.8.12.tar.gz
-cd cmake-2.8.12
-./configure --prefix=$HOME/cmake-install
-make 
-make install
-export PATH=$HOME/cmake-install/bin:$PATH
-
+sudo apt-get update -qq
 sudo apt-get install p7zip-full -y
 sudo apt-get install bison -y
+sudo apt-get install -y binutils gcc g++ gfortran git cmake liblapack-dev ipython python-dev python-numpy python-scipy python-matplotlib libmumps-seq-dev libblas-dev liblapack-dev libxml2-dev
+sudo apt-get install -y fakeroot rpm alien
 
 # get ipopt
 wget http://www.coin-or.org/download/source/Ipopt/Ipopt-3.12.3.tgz
@@ -54,10 +48,6 @@ make install
 cd ..
 
 # setup compiler
-sudo apt-get update -qq
-sudo apt-get install -y binutils gcc g++ gfortran git cmake liblapack-dev ipython python-dev python-numpy python-scipy python-matplotlib libmumps-seq-dev libblas-dev liblapack-dev libxml2-dev
-sudo apt-get install -y fakeroot rpm alien
-
 export SWIG_HOME=$HOME/swig-matlab-install 
 export PATH=$SWIG_HOME/bin:$SWIG_HOME/share:$PATH
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$HOME/ipopt-install/lib/pkgconfig
