@@ -18,7 +18,8 @@ sh deploy_openocl_v3-41.sh
 
 * BLAS (through ipopt) http://www.netlib.org/blas
 * LAPACK (through ipopt) http://www.netlib.org/lapack
-* ASL (through ipopt) http://www.netlib.org/ampl/solvers/
+* Metis (through ipopt) http://glaros.dtc.umn.edu/gkhome/metis/metis/overview
+* MUMPS (through ipopt) http://graal.ens-lyon.fr/MUMPS/
 
 ## Full casadi installation
 
