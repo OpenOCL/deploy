@@ -27,6 +27,10 @@ If you use CasADi in your academic work, please cite the following paper:
 
 Source-code in third_party/ipopt
 
+For licensing information for files in this directory, please see the
+comments in the header of each file. For licensing of files in each of
+the subdirectories, please see the LICENSE file in that subdirectory.
+
 Since a lot of time and effort has gone into Ipopt's development, please cite the following publication if you are using Ipopt for your own research:
 A. Wächter and L. T. Biegler, On the Implementation of a Primal-Dual Interior Point Filter Line Search Algorithm for Large-Scale Nonlinear Programming, Mathematical Programming 106(1), pp. 25-57, 2006 (preprint)
 
