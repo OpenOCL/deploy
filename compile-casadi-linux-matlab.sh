@@ -1,26 +1,30 @@
-# ipopt
-VERSION=3.12.3
-wget http://www.coin-or.org/download/source/Ipopt/Ipopt-$VERSION.tgz
-tar -xvf Ipopt-$VERSION.tgz
-
+# get ipopt
+wget http://www.coin-or.org/download/source/Ipopt/Ipopt-3.12.3.tgz
+tar -xvf Ipopt-3.12.3.tgz
+cd Ipopt-3.12.3
 cd ThirdParty
+
 cd Blas 
 ./get.Blas
-cd Lapack 
-./get.Lapack
-cd Metis 
-./get.Metis
-cd Mumps 
-./get.Mumps && popd
 cd ..
 
-# required for modern x86_64-w64-mingw32-pkg-config
-find . -type f -name "*" -exec sed -i'' -e 's/PKG_CONFIG_PATH/PKG_CONFIG_LIBDIR/g' {} +
+cd Lapack 
+./get.Lapack
+cd ..
 
+cd Metis 
+./get.Metis
+cd ..
+
+cd Mumps 
+./get.Mumps
+cd ..
+
+cd ..
 mkdir build
 cd build
 mkdir $HOME/ipopt-install
-../configure $FLAGS --prefix=$HOME/ipopt-install --disable-shared ADD_FFLAGS=-fPIC ADD_CFLAGS=-fPIC ADD_CXXFLAGS=-fPIC --with-blas=BUILD --with-lapack=BUILD --with-mumps=BUILD --with-metis=BUILD --without-hsl --without-asl
+../configure coin_skip_warn_cxxflags=yes --prefix=$HOME/ipopt-install --disable-shared ADD_FFLAGS=-fPIC ADD_CFLAGS=-fPIC ADD_CXXFLAGS=-fPIC --with-blas=BUILD --with-lapack=BUILD --with-mumps=BUILD --with-metis=BUILD --without-hsl --without-asl
 make
 make install
 
