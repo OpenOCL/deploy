@@ -4,6 +4,13 @@ sudo apt-get install bison -y
 sudo apt-get install -y binutils gcc g++ gfortran git cmake liblapack-dev ipython python-dev python-numpy python-scipy python-matplotlib libmumps-seq-dev libblas-dev liblapack-dev libxml2-dev
 sudo apt-get install -y fakeroot rpm alien
 
+# METIS
+wget http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/metis-5.1.0.tar.gz
+tar xzf metis-5.1.0.tar.gz
+cd metis-5.1.0/
+make config prefix=$HOME/metis-install
+make install
+
 # get ipopt
 wget http://www.coin-or.org/download/source/Ipopt/Ipopt-3.12.3.tgz
 tar -xf Ipopt-3.12.3.tgz
@@ -18,10 +25,6 @@ cd Lapack
 ./get.Lapack
 cd ..
 
-cd Metis 
-./get.Metis
-cd ..
-
 cd Mumps 
 ./get.Mumps
 cd ..
@@ -30,7 +33,7 @@ cd ..
 mkdir build
 cd build
 mkdir $HOME/ipopt-install
-../configure coin_skip_warn_cxxflags=yes --prefix=$HOME/ipopt-install --disable-shared ADD_FFLAGS=-fPIC ADD_CFLAGS=-fPIC ADD_CXXFLAGS=-fPIC --with-blas=BUILD --with-lapack=BUILD --with-mumps=BUILD --with-metis=BUILD --without-hsl --without-asl
+../configure coin_skip_warn_cxxflags=yes --prefix=$HOME/ipopt-install --disable-shared ADD_FFLAGS=-fPIC ADD_CFLAGS=-fPIC ADD_CXXFLAGS=-fPIC --with-blas=BUILD --with-lapack=BUILD --with-mumps=BUILD --with-metis="-L$HOME/metis-install -lmetis" --without-hsl --without-asl
 make
 make install
 cd ..
