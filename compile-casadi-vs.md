@@ -33,5 +33,9 @@ cd swig_matlab
 
 ## Install Matlab
 
-Don't use Matlab2019a
 
+## Compile Ipopt
+
+Get blas, lapack, metis, mumps
+
+```./configure --enable-doscompile=msvc```
