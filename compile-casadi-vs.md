@@ -12,6 +12,12 @@ https://sourceforge.net/projects/mingw/files/Other/Unsupported/MSYS/msysDTK/msys
 
 Install into MinGW/msys/1.0 directory.
 
+## Install pcre
+
+Get developer files from:
+
+http://gnuwin32.sourceforge.net/packages/pcre.htm
+
 ## Compile SWIG Matlab
 
 Start msys (version 1.0.11)
