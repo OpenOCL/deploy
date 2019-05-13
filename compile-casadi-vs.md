@@ -23,7 +23,9 @@ http://gnuwin32.sourceforge.net/packages/pcre.htm
 Start msys (version 1.0.11)
 
 ```
-git clone https://github.com/jaeandersson/swig.git swig_matlab
+export CFLAGS="-I$HOME/pcre/include"
+export LDFLAGS="-L$HOME/pcre/lib"
+git clone --depth=1 https://github.com/jaeandersson/swig.git swig_matlab
 cd swig_matlab
 ./autogen
 ./configure --prefix=$HOME/swig-install CXXFLAGS="-I$HOME/pcre/include -L$HOME/pcre/lib"
