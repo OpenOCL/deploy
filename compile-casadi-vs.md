@@ -38,4 +38,6 @@ cd swig_matlab
 
 Get blas, lapack, metis, mumps
 
+``` export CC=D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.20.27508\bin\Hostx64\x64```
+
 ```./configure --enable-doscompile=msvc```
