@@ -4,9 +4,13 @@ http://www.mingw.org/wiki/Getting_Started
 
 https://osdn.net/projects/mingw/downloads/68260/mingw-get-setup.exe
 
+Select msys to install
+
 ## install dtk
 
 https://sourceforge.net/projects/mingw/files/Other/Unsupported/MSYS/msysDTK/msysDTK-1.0.1/
+
+Install into MinGW/msys/1.0 directory.
 
 ## Compile SWIG Matlab
 
