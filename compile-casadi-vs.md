@@ -26,6 +26,6 @@ Start msys (version 1.0.11)
 git clone https://github.com/jaeandersson/swig.git swig_matlab
 cd swig_matlab
 ./autogen
-./configure
+./configure --prefix=$HOME/swig-install CXXFLAGS="-I$HOME/pcre/include -L$HOME/pcre/lib"
 ```
 
