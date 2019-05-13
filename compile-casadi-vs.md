@@ -20,7 +20,7 @@ http://gnuwin32.sourceforge.net/packages/pcre.htm
 
 ## Compile SWIG Matlab
 
-Start msys (version 1.0.11)
+Start msys (version 1.0.11). 
 
 ```
 export CFLAGS="-I$HOME/pcre/include"
@@ -30,4 +30,8 @@ cd swig_matlab
 ./autogen
 ./configure --prefix=$HOME/swig-install CXXFLAGS="-I$HOME/pcre/include -L$HOME/pcre/lib"
 ```
+
+## Install Matlab
+
+Don't use Matlab2019a
 
