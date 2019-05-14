@@ -20,26 +20,8 @@ make -j4
 make install
 cd ..
 
-BUILD_TYPE=Release
-NAME_SUFFIX=""
-compilerprefix=x86_64-w64-mingw32
-BITNESS=64
-
 export CC=x86_64-w64-mingw32-gcc-posix
 export CXX=x86_64-w64-mingw32-g++-posix
-export CXXFLAGS=-lstdc++
-
-
-# METIS
-# wget http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/metis-5.1.0.tar.gz
-# tar xzf metis-5.1.0.tar.gz
-# cd metis-5.1.0/
-# mkdir build
-# cd build
-# cp /mnt/c/Users/jonas/Documents/repos/ocl-deployment/toolchain-metis.cmake .
-# cmake -DGKLIB_PATH=../GKlib/ -DCMAKE_INSTALL_PREFIX=$HOME/metis-install -DCMAKE_TOOLCHAIN_FILE=toolchain-metis.cmake ..
-# make
-# make install
 
 rm metis-5.1.0.tar.gz
 rm -r metis-5.1.0
@@ -86,13 +68,14 @@ export PATH=$SWIG_HOME/bin:$SWIG_HOME/share:$PATH
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$HOME/ipopt-install/lib/pkgconfig
 
 # get matlab
-export MATLAB_ROOT=$HOME/matlab
-
 export LDFLAGS=-static-libstdc++
-
 
 # compile
 git clone --branch 3.4.5 https://github.com/casadi/casadi.git --depth=1
+
+rm casadi/swig/matlab/CMakeLists.txt
+cp CMakeListsWinMatlab.txt casadi/swig/matlab/CMakeLists.txt
+
 cd casadi
 mkdir build
 cp /mnt/c/Users/jonas/Documents/repos/ocl-deployment/toolchain-casadi.cmake .
