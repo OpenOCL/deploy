@@ -1,20 +1,16 @@
 set -e
 
-cd $HOME
-rm -rf $HOME/build-casadi-linux-matlab
-
-mkdir build-casadi-linux
-cd build-casadi-linux
-
-rm -rf $HOME/build-casadi-linux-matlab/casadi-install
-rm -rf $HOME/build-casadi-linux-matlab/swig-install
-rm -rf $HOME/build-casadi-linux-matlab/ipopt-install
-
 sudo apt-get update -qq
 sudo apt-get install p7zip-full -y
 sudo apt-get install bison -y
-sudo apt-get install -y binutils gcc g++ gfortran git cmake liblapack-dev ipython python-dev python-numpy python-scipy python-matplotlib libmumps-seq-dev libblas-dev liblapack-dev libxml2-dev
+sudo apt-get install -y binutils gcc g++ gfortran git cmake liblapack-dev ipython
+sudo apt-get install -y python-dev python-numpy python-scipy python-matplotlib libmumps-seq-dev
+sudo apt-get install -y libblas-dev liblapack-dev libxml2-dev
 sudo apt-get install -y fakeroot rpm alien
+
+rm -rf $HOME/build-casadi-linux-matlab
+mkdir build-casadi-linux-matlab
+cd $HOME/build-casadi-linux-matlab
 
 # get ipopt
 wget http://www.coin-or.org/download/source/Ipopt/Ipopt-3.12.3.tgz
@@ -42,7 +38,9 @@ cd ..
 mkdir build
 cd build
 mkdir $HOME/build-casadi-linux-matlab/ipopt-install
-../configure coin_skip_warn_cxxflags=yes --prefix=$HOME/build-casadi-linux-matlab/ipopt-install --disable-shared ADD_FFLAGS=-fPIC ADD_CFLAGS=-fPIC ADD_CXXFLAGS=-fPIC --with-blas=BUILD --with-lapack=BUILD --with-mumps=BUILD --with-metis=BUILD --without-hsl --without-asl
+../configure coin_skip_warn_cxxflags=yes --prefix=$HOME/build-casadi-linux-matlab/ipopt-install \
+    --disable-shared ADD_FFLAGS=-fPIC ADD_CFLAGS=-fPIC ADD_CXXFLAGS=-fPIC --with-blas=BUILD \
+    --with-lapack=BUILD --with-mumps=BUILD --with-metis=BUILD --without-hsl --without-asl
 make -j4
 make install
 cd ..
@@ -76,7 +74,12 @@ git clone https://github.com/casadi/casadi.git --depth=1
 cd casadi
 mkdir build
 cd build
-cmake -DCMAKE_INSTALL_PREFIX=$HOME/build-casadi-linux-matlab/casadi-install -DWITH_OSQP=OFF -DWITH_THREAD_MINGW=OFF -DWITH_THREAD=ON -DWITH_AMPL=OFF -DCMAKE_BUILD_TYPE=Release -DWITH_SO_VERSION=OFF -DWITH_NO_QPOASES_BANNER=ON -DWITH_COMMON=ON -DWITH_HPMPC=OFF -DWITH_BUILD_HPMPC=OFF -DWITH_BLASFEO=OFF -DWITH_BUILD_BLASFEO=OFF -DINSTALL_INTERNAL_HEADERS=ON -DWITH_IPOPT=ON -DWITH_OPENMP=ON -DWITH_SELFCONTAINED=ON -DWITH_DEEPBIND=ON -DWITH_MATLAB=ON  -DWITH_DOC=OFF -DWITH_EXAMPLES=OFF -DWITH_EXTRA_WARNINGS=ON ..
+cmake -DCMAKE_INSTALL_PREFIX=$HOME/build-casadi-linux-matlab/casadi-install -DWITH_OSQP=OFF \
+    -DWITH_THREAD_MINGW=OFF -DWITH_THREAD=ON -DWITH_AMPL=OFF -DCMAKE_BUILD_TYPE=Release \
+    -DWITH_SO_VERSION=OFF -DWITH_NO_QPOASES_BANNER=ON -DWITH_COMMON=ON -DWITH_HPMPC=OFF \
+    -DWITH_BUILD_HPMPC=OFF -DWITH_BLASFEO=OFF -DWITH_BUILD_BLASFEO=OFF -DINSTALL_INTERNAL_HEADERS=ON \
+    -DWITH_IPOPT=ON -DWITH_OPENMP=ON -DWITH_SELFCONTAINED=ON -DWITH_DEEPBIND=ON -DWITH_MATLAB=ON \
+    -DWITH_DOC=OFF -DWITH_EXAMPLES=OFF -DWITH_EXTRA_WARNINGS=ON ..
 make -j4
 make install
 
@@ -86,3 +89,6 @@ rm -r casadi
 
 export datestr=$(date +"%Y%m%d%H%M%")
 zip -r casadi-3.4.5-linux-matlab-ipopt-minimal-${datestr}.zip casadi-install
+
+cd $HOME
+cp $HOME/build-casadi-linux-matlab/casadi-3.4.5-linux-matlab-ipopt-minimal-${datestr}.zip .
