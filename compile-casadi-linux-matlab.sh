@@ -2,7 +2,6 @@ set -e
 
 rm -rf $HOME/casadi-matlab-install
 rm -rf $HOME/swig-matlab-install
-rm -rf $HOME/metis-install
 rm -rf $HOME/ipopt-install
 rm -rf $HOME/casadi-linux-matlab-install
 
@@ -12,22 +11,15 @@ sudo apt-get install bison -y
 sudo apt-get install -y binutils gcc g++ gfortran git cmake liblapack-dev ipython python-dev python-numpy python-scipy python-matplotlib libmumps-seq-dev libblas-dev liblapack-dev libxml2-dev
 sudo apt-get install -y fakeroot rpm alien
 
-# METIS
-wget http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/metis-5.1.0.tar.gz
-tar xzf metis-5.1.0.tar.gz
-cd metis-5.1.0/
-make config prefix=$HOME/metis-install
-make install
-cd ..
-
-rm metis-5.1.0.tar.gz
-rm -r metis-5.1.0
-
 # get ipopt
 wget http://www.coin-or.org/download/source/Ipopt/Ipopt-3.12.3.tgz
 tar -xf Ipopt-3.12.3.tgz
 cd Ipopt-3.12.3
 cd ThirdParty
+
+cd Metis
+./get.Metis
+cd ..
 
 cd Blas
 ./get.Blas
@@ -92,6 +84,5 @@ zip -r casadi-linux-matlab-ipopt-minimal.zip casadi-linux-matlab-install
 
 rm -r $HOME/casadi-matlab-install
 rm -r $HOME/swig-matlab-install
-rm -r $HOME/metis-install
 rm -r $HOME/ipopt-install
 rm -r $HOME/casadi-linux-matlab-install

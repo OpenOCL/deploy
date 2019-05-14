@@ -2,7 +2,6 @@ set -e
 
 rm -rf $HOME/casadi-matlab-install
 rm -rf $HOME/swig-matlab-install
-rm -rf $HOME/metis-install
 rm -rf $HOME/ipopt-install
 rm -rf $HOME/casadi-linux-matlab-install
 
