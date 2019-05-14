@@ -1,11 +1,14 @@
 set -e
 
 cd $HOME
+rm -rf $HOME/build-casadi-linux-matlab
 
-rm -rf $HOME/casadi-matlab-install
-rm -rf $HOME/swig-matlab-install
-rm -rf $HOME/ipopt-install
-rm -rf $HOME/casadi-linux-matlab-install
+mkdir build-casadi-linux
+cd build-casadi-linux
+
+rm -rf $HOME/build-casadi-linux-matlab/casadi-install
+rm -rf $HOME/build-casadi-linux-matlab/swig-install
+rm -rf $HOME/build-casadi-linux-matlab/ipopt-install
 
 sudo apt-get update -qq
 sudo apt-get install p7zip-full -y
@@ -38,8 +41,8 @@ cd ..
 cd ..
 mkdir build
 cd build
-mkdir $HOME/ipopt-install
-../configure coin_skip_warn_cxxflags=yes --prefix=$HOME/ipopt-install --disable-shared ADD_FFLAGS=-fPIC ADD_CFLAGS=-fPIC ADD_CXXFLAGS=-fPIC --with-blas=BUILD --with-lapack=BUILD --with-mumps=BUILD --with-metis=BUILD --without-hsl --without-asl
+mkdir $HOME/build-casadi-linux-matlab/ipopt-install
+../configure coin_skip_warn_cxxflags=yes --prefix=$HOME/build-casadi-linux-matlab/ipopt-install --disable-shared ADD_FFLAGS=-fPIC ADD_CFLAGS=-fPIC ADD_CXXFLAGS=-fPIC --with-blas=BUILD --with-lapack=BUILD --with-mumps=BUILD --with-metis=BUILD --without-hsl --without-asl
 make -j4
 make install
 cd ..
@@ -53,7 +56,7 @@ sudo apt-get install -y libpcre3-dev automake yodl
 git clone --depth=1 https://github.com/jaeandersson/swig.git
 cd swig
 ./autogen.sh
-./configure --prefix=$HOME/swig-matlab-install
+./configure --prefix=$HOME/build-casadi-linux-matlab/swig-install
 make -j4
 make install
 cd ..
@@ -61,9 +64,9 @@ cd ..
 rm -r swig
 
 # setup compiler
-export SWIG_HOME=$HOME/swig-matlab-install
+export SWIG_HOME=$HOME/build-casadi-linux-matlab/swig-install
 export PATH=$SWIG_HOME/bin:$SWIG_HOME/share:$PATH
-export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$HOME/ipopt-install/lib/pkgconfig
+export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$HOME/build-casadi-linux-matlab/ipopt-install/lib/pkgconfig
 
 # get matlab
 export MATLAB_ROOT=$HOME/matlab
@@ -73,7 +76,7 @@ git clone https://github.com/casadi/casadi.git --depth=1
 cd casadi
 mkdir build
 cd build
-cmake -DCMAKE_INSTALL_PREFIX=$HOME/casadi-linux-matlab-install -DWITH_OSQP=OFF -DWITH_THREAD_MINGW=OFF -DWITH_THREAD=ON -DWITH_AMPL=OFF -DCMAKE_BUILD_TYPE=Release -DWITH_SO_VERSION=OFF -DWITH_NO_QPOASES_BANNER=ON -DWITH_COMMON=ON -DWITH_HPMPC=OFF -DWITH_BUILD_HPMPC=OFF -DWITH_BLASFEO=OFF -DWITH_BUILD_BLASFEO=OFF -DINSTALL_INTERNAL_HEADERS=ON -DWITH_IPOPT=ON -DWITH_OPENMP=ON -DWITH_SELFCONTAINED=ON -DWITH_DEEPBIND=ON -DWITH_MATLAB=ON  -DWITH_DOC=OFF -DWITH_EXAMPLES=OFF -DWITH_EXTRA_WARNINGS=ON ..
+cmake -DCMAKE_INSTALL_PREFIX=$HOME/build-casadi-linux-matlab/casadi-install -DWITH_OSQP=OFF -DWITH_THREAD_MINGW=OFF -DWITH_THREAD=ON -DWITH_AMPL=OFF -DCMAKE_BUILD_TYPE=Release -DWITH_SO_VERSION=OFF -DWITH_NO_QPOASES_BANNER=ON -DWITH_COMMON=ON -DWITH_HPMPC=OFF -DWITH_BUILD_HPMPC=OFF -DWITH_BLASFEO=OFF -DWITH_BUILD_BLASFEO=OFF -DINSTALL_INTERNAL_HEADERS=ON -DWITH_IPOPT=ON -DWITH_OPENMP=ON -DWITH_SELFCONTAINED=ON -DWITH_DEEPBIND=ON -DWITH_MATLAB=ON  -DWITH_DOC=OFF -DWITH_EXAMPLES=OFF -DWITH_EXTRA_WARNINGS=ON ..
 make -j4
 make install
 
@@ -81,10 +84,5 @@ cd ..
 cd ..
 rm -r casadi
 
-cd $HOME
-zip -r casadi-linux-matlab-ipopt-minimal.zip casadi-linux-matlab-install
-
-rm -r $HOME/casadi-matlab-install
-rm -r $HOME/swig-matlab-install
-rm -r $HOME/ipopt-install
-rm -r $HOME/casadi-linux-matlab-install
+export datestr=$(date +"%Y%m%d%H%M%")
+zip -r casadi-3.4.5-linux-matlab-ipopt-minimal-${datestr}.zip casadi-install
