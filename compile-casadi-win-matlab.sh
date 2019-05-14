@@ -24,14 +24,14 @@ cp toolchain-casadi.cmake $HOME/build-casadi-win-matlab
 
 cd $HOME/build-casadi-win-matlab
 
-export CC=x86_64-w64-mingw32-gcc-posix
-export CXX=x86_64-w64-mingw32-g++-posix
-
-# swig matlab
+# swig matlab w pcre
 git clone https://github.com/jaeandersson/swig.git --depth=1
 cd swig
+wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.42.tar.gz
+sh Tools/pcre-build.sh --host=x86_64 CC=x86_64-w64-mingw32-gcc CXX=x86_64-w64-mingw32-g++
 ./autogen.sh
-./configure --prefix=$HOME/build-casadi-win-matlab/swig-install
+./configure --prefix=$HOME/build-casadi-win-matlab/swig-install \
+    --host=x86_64 CC=x86_64-w64-mingw32-gcc CXX=x86_64-w64-mingw32-g++
 make -j4
 make install
 
