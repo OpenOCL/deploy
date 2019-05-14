@@ -1,5 +1,11 @@
 set -e
 
+rm -rf $HOME/casadi-matlab-install
+rm -rf $HOME/swig-matlab-install
+rm -rf $HOME/metis-install
+rm -rf $HOME/ipopt-install
+rm -rf $HOME/casadi-linux-matlab-install
+
 sudo apt-get update -qq
 sudo apt-get install p7zip-full -y
 sudo apt-get install bison -y
@@ -72,7 +78,7 @@ export LDFLAGS=-static-libstdc++
 # compile
 git clone --branch 3.4.5 https://github.com/casadi/casadi.git --depth=1
 
-rm casadi/swig/matlab/CMakeLists.txt
+mv casadi/swig/matlab/CMakeLists.txt casadi/swig/matlab/CMakeLists_bkp.txt
 cp CMakeListsWinMatlab.txt casadi/swig/matlab/CMakeLists.txt
 
 cd casadi
