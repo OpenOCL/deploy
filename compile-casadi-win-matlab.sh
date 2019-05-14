@@ -77,11 +77,10 @@ rm Ipopt-3.12.3.tgz
 rm -rf Ipopt-3.12.3
 
 # setup compiler
-export SWIG_HOME=$HOME/build-casadi-win-matlab/swig-matlab-install
-export PATH=$SWIG_HOME/bin:$SWIG_HOME/share:$PATH
-export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$HOME/build-casadi-win-matlab/ipopt-install/lib/pkgconfig
+export SWIG_HOME=${HOME}/build-casadi-win-matlab/swig-install
+export PATH=${SWIG_HOME}/bin:${SWIG_HOME}/share:${PATH}
+export PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:${HOME}/build-casadi-win-matlab/ipopt-install/lib/pkgconfig
 
-# get matlab
 export LDFLAGS=-static-libstdc++
 
 # compile
@@ -100,7 +99,7 @@ cmake -DCMAKE_INSTALL_PREFIX=$HOME/build-casadi-win-matlab/casadi-install -DMATL
     -DWITH_NO_QPOASES_BANNER=ON -DWITH_COMMON=ON -DWITH_HPMPC=OFF -DWITH_BUILD_HPMPC=OFF \
     -DWITH_BLASFEO=OFF -DWITH_BUILD_BLASFEO=OFF -DINSTALL_INTERNAL_HEADERS=ON -DWITH_IPOPT=ON \
     -DWITH_OPENMP=ON -DWITH_SELFCONTAINED=ON -DWITH_DEEPBIND=ON -DWITH_MATLAB=ON -DWITH_DOC=OFF \
-    -DWITH_EXAMPLES=OFF -DWITH_EXTRA_WARNINGS=ON -DMATLAB_ROOT=$HOME/matlab-install-R2016a ..
+    -DWITH_EXAMPLES=OFF -DWITH_EXTRA_WARNINGS=ON -DMATLAB_ROOT=${MATLAB_ROOT} ..
 make -j4
 make install
 

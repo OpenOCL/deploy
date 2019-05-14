@@ -67,9 +67,9 @@ cd ..
 rm -rf swig
 
 # setup compiler
-export SWIG_HOME=$HOME/build-casadi-linux-matlab/swig-install
-export PATH=$SWIG_HOME/bin:$SWIG_HOME/share:$PATH
-export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$HOME/build-casadi-linux-matlab/ipopt-install/lib/pkgconfig
+export SWIG_HOME=${HOME}/build-casadi-linux-matlab/swig-install
+export PATH=${SWIG_HOME}/bin:${SWIG_HOME}/share:${PATH}
+export PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:${HOME}/build-casadi-linux-matlab/ipopt-install/lib/pkgconfig
 
 # compile
 git clone https://github.com/casadi/casadi.git --depth=1
