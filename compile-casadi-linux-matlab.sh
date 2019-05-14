@@ -56,9 +56,8 @@ rm -r Ipopt-3.12.3
 
 # swig matlab
 sudo apt-get install -y libpcre3-dev automake yodl
-git clone https://github.com/jaeandersson/swig.git
+git clone --depth=1 https://github.com/jaeandersson/swig.git
 cd swig
-git checkout 82714bf35c33fe2
 ./autogen.sh
 ./configure --prefix=$HOME/swig-matlab-install
 make -j4
