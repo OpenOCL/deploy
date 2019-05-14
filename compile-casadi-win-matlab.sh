@@ -10,6 +10,9 @@ sudo apt-get remove -y mingw32
 sudo apt-get install -y dpkg
 sudo apt-get install -y mingw-w64 g++-mingw-w64 gcc-mingw-w64 gfortran-mingw-w64 mingw-w64-tools
 
+export CC=x86_64-w64-mingw32-gcc-posix
+export CXX=x86_64-w64-mingw32-g++-posix
+
 # swig matlab
 sudo apt-get install -y libpcre3-dev automake yodl
 git clone https://github.com/jaeandersson/swig.git --depth=1
@@ -18,10 +21,9 @@ cd swig
 ./configure --prefix=$HOME/swig-matlab-install
 make -j4
 make install
-cd ..
 
-export CC=x86_64-w64-mingw32-gcc-posix
-export CXX=x86_64-w64-mingw32-g++-posix
+cd ..
+rm -r swig
 
 # get ipopt
 wget http://www.coin-or.org/download/source/Ipopt/Ipopt-3.12.3.tgz
@@ -47,9 +49,6 @@ cd ..
 
 cd ..
 
-# required for modern x86_64-w64-mingw32-pkg-config
-find . -type f -name "*" -exec sed -i'' -e 's/PKG_CONFIG_PATH/PKG_CONFIG_LIBDIR/g' {} +
-
 mkdir build
 cd build
 mkdir $HOME/ipopt-install
@@ -58,6 +57,9 @@ make -j4
 make install
 cd ..
 cd ..
+
+rm Ipopt-3.12.3.tgz
+rm -r Ipopt-3.12.3
 
 # setup compiler
 export SWIG_HOME=$HOME/swig-matlab-install
@@ -77,6 +79,18 @@ cd casadi
 mkdir build
 cp /mnt/c/Users/jonas/Documents/repos/ocl-deployment/toolchain-casadi.cmake .
 cd build
-cmake -DMATLAB_EXTRA_CXXFLAGS=\"-D__STDC_UTF_16__\"  -DCMAKE_TOOLCHAIN_FILE=../toolchain-casadi.cmake -DWITH_OSQP=OFF -DWITH_THREAD_MINGW=OFF -DWITH_THREAD=ON -DWITH_AMPL=OFF -DCMAKE_BUILD_TYPE=Release -DWITH_SO_VERSION=OFF -DWITH_NO_QPOASES_BANNER=ON -DWITH_COMMON=ON -DWITH_HPMPC=OFF -DWITH_BUILD_HPMPC=OFF -DWITH_BLASFEO=OFF -DWITH_BUILD_BLASFEO=OFF -DINSTALL_INTERNAL_HEADERS=ON -DWITH_IPOPT=ON -DWITH_OPENMP=ON -DWITH_SELFCONTAINED=ON -DCMAKE_INSTALL_PREFIX=$HOME/casadi-matlab-install -DWITH_DEEPBIND=ON -DWITH_MATLAB=ON -DWITH_DOC=OFF -DWITH_EXAMPLES=OFF -DWITH_EXTRA_WARNINGS=ON -DMATLAB_ROOT=$HOME/matlab-install-R2016a ..
+cmake -DCMAKE_INSTALL_PREFIX=$HOME/casadi-win-matlab-install -DMATLAB_EXTRA_CXXFLAGS=\"-D__STDC_UTF_16__\"  -DCMAKE_TOOLCHAIN_FILE=../toolchain-casadi.cmake -DWITH_OSQP=OFF -DWITH_THREAD_MINGW=OFF -DWITH_THREAD=ON -DWITH_AMPL=OFF -DCMAKE_BUILD_TYPE=Release -DWITH_SO_VERSION=OFF -DWITH_NO_QPOASES_BANNER=ON -DWITH_COMMON=ON -DWITH_HPMPC=OFF -DWITH_BUILD_HPMPC=OFF -DWITH_BLASFEO=OFF -DWITH_BUILD_BLASFEO=OFF -DINSTALL_INTERNAL_HEADERS=ON -DWITH_IPOPT=ON -DWITH_OPENMP=ON -DWITH_SELFCONTAINED=ON -DWITH_DEEPBIND=ON -DWITH_MATLAB=ON -DWITH_DOC=OFF -DWITH_EXAMPLES=OFF -DWITH_EXTRA_WARNINGS=ON -DMATLAB_ROOT=$HOME/matlab-install-R2016a ..
 make -j4
 make install
+
+cd ..
+cd ..
+rm -r casadi
+
+cd $HOME
+zip -r casadi-win-matlab-ipopt-minimal.zip casadi-win-matlab-install
+
+rm -r $HOME/casadi-matlab-install
+rm -r $HOME/swig-matlab-install
+rm -r $HOME/ipopt-install
+rm -r $HOME/casadi-linux-matlab-install
