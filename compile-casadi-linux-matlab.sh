@@ -12,6 +12,7 @@ tar xzf metis-5.1.0.tar.gz
 cd metis-5.1.0/
 make config prefix=$HOME/metis-install
 make install
+cd ..
 
 rm metis-5.1.0.tar.gz
 rm -r metis-5.1.0
@@ -44,6 +45,9 @@ make install
 cd ..
 cd ..
 
+rm Ipopt-3.12.3.tgz
+rm -r Ipopt-3.12.3
+
 # swig matlab
 sudo apt-get install -y libpcre3-dev automake yodl
 git clone https://github.com/jaeandersson/swig.git
@@ -54,6 +58,8 @@ git checkout 82714bf35c33fe2
 make -j4
 make install
 cd ..
+
+rm -r swig
 
 # setup compiler
 export SWIG_HOME=$HOME/swig-matlab-install
@@ -67,9 +73,20 @@ export MATLAB_ROOT=$HOME/matlab
 git clone --branch 3.4.5 https://github.com/casadi/casadi.git --depth=1
 cd casadi
 mkdir build
-mkdir -p build/swig/matlab/
-touch build/swig/matlab/SwigGet.m
 cd build
-cmake -DWITH_OSQP=OFF -DWITH_THREAD_MINGW=OFF -DWITH_THREAD=ON -DWITH_AMPL=OFF -DCMAKE_BUILD_TYPE=Release -DWITH_SO_VERSION=OFF -DWITH_NO_QPOASES_BANNER=ON -DWITH_COMMON=ON -DWITH_HPMPC=OFF -DWITH_BUILD_HPMPC=OFF -DWITH_BLASFEO=OFF -DWITH_BUILD_BLASFEO=OFF -DINSTALL_INTERNAL_HEADERS=ON -DWITH_IPOPT=ON -DWITH_OPENMP=ON -DWITH_SELFCONTAINED=ON -DCMAKE_INSTALL_PREFIX=$HOME/casadi-matlab-install -DWITH_DEEPBIND=ON -DWITH_MATLAB=ON  -DWITH_DOC=OFF -DWITH_EXAMPLES=OFF -DWITH_EXTRA_WARNINGS=ON ..
+cmake -DCMAKE_INSTALL_PREFIX=$HOME/casadi-linux-matlab-install -DWITH_OSQP=OFF -DWITH_THREAD_MINGW=OFF -DWITH_THREAD=ON -DWITH_AMPL=OFF -DCMAKE_BUILD_TYPE=Release -DWITH_SO_VERSION=OFF -DWITH_NO_QPOASES_BANNER=ON -DWITH_COMMON=ON -DWITH_HPMPC=OFF -DWITH_BUILD_HPMPC=OFF -DWITH_BLASFEO=OFF -DWITH_BUILD_BLASFEO=OFF -DINSTALL_INTERNAL_HEADERS=ON -DWITH_IPOPT=ON -DWITH_OPENMP=ON -DWITH_SELFCONTAINED=ON -DWITH_DEEPBIND=ON -DWITH_MATLAB=ON  -DWITH_DOC=OFF -DWITH_EXAMPLES=OFF -DWITH_EXTRA_WARNINGS=ON ..
 make -j4
 make install
+cd ..
+cd ..
+
+rm -r casadi
+
+cd $HOME
+zip -r casadi-linux-matlab-ipopt-minimal.zip casadi-linux-matlab-install
+
+rm -r $HOME/casadi-matlab-install
+rm -r $HOME/swig-matlab-install
+rm -r $HOME/metis-install
+rm -r $HOME/ipopt-install
+rm -r $HOME/casadi-linux-matlab-install

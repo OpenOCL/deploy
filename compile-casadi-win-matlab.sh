@@ -23,9 +23,6 @@ cd ..
 export CC=x86_64-w64-mingw32-gcc-posix
 export CXX=x86_64-w64-mingw32-g++-posix
 
-rm metis-5.1.0.tar.gz
-rm -r metis-5.1.0
-
 # get ipopt
 wget http://www.coin-or.org/download/source/Ipopt/Ipopt-3.12.3.tgz
 tar -xf Ipopt-3.12.3.tgz
