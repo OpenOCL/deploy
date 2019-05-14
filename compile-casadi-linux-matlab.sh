@@ -1,5 +1,7 @@
 set -e
 
+cd $HOME
+
 rm -rf $HOME/casadi-matlab-install
 rm -rf $HOME/swig-matlab-install
 rm -rf $HOME/ipopt-install
@@ -37,7 +39,7 @@ cd ..
 mkdir build
 cd build
 mkdir $HOME/ipopt-install
-../configure coin_skip_warn_cxxflags=yes --prefix=$HOME/ipopt-install --disable-shared ADD_FFLAGS=-fPIC ADD_CFLAGS=-fPIC ADD_CXXFLAGS=-fPIC --with-blas=BUILD --with-lapack=BUILD --with-mumps=BUILD --with-metis="-L$HOME/metis-install -lmetis" --without-hsl --without-asl
+../configure coin_skip_warn_cxxflags=yes --prefix=$HOME/ipopt-install --disable-shared ADD_FFLAGS=-fPIC ADD_CFLAGS=-fPIC ADD_CXXFLAGS=-fPIC --with-blas=BUILD --with-lapack=BUILD --with-mumps=BUILD --with-metis=BUILD --without-hsl --without-asl
 make -j4
 make install
 cd ..

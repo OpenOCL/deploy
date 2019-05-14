@@ -1,5 +1,7 @@
 set -e
 
+cd $HOME
+
 rm -rf $HOME/casadi-matlab-install
 rm -rf $HOME/swig-matlab-install
 rm -rf $HOME/ipopt-install
