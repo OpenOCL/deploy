@@ -1,4 +1,4 @@
-set(MATLAB_LIBRARIES /home/jonas/matlab-install-R2016a/bin/win64/libut.dll /home/jonas/matlab-install-R2016a/bin/win64/libmex.dll /home/jonas/matlab-install-R2016a/bin/win64/libmx.dll /home/jonas/matlab-install-R2016a/bin/win64/libeng.dll)
+set(MATLAB_LIBRARIES $ENV{MATLAB_ROOT}/bin/win64/libut.dll $ENV{MATLAB_ROOT}/bin/win64/libmex.dll $ENV{MATLAB_ROOT}/bin/win64/libmx.dll $ENV{MATLAB_ROOT}/bin/win64/libeng.dll)
 set(MATLAB_INCLUDE_DIR "/home/jonas/matlab-install-R2016a/extern/include")
 set(MATLAB_EXTRA_CXXFLAGS "-D__STDC_UTF_16__")
 set(MATLAB_MEX_EXT "mexw64")

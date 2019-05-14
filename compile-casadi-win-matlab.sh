@@ -1,5 +1,10 @@
 set -e
 
+if [ -z "${MATLAB_ROOT}" ]; then
+   echo "You need to set MATLAB_ROOT environment variable to directory of your Matlab installation."
+   exit 1
+fi
+
 sudo apt-get update -qq
 sudo apt-get install p7zip-full -y
 sudo apt-get install bison -y
@@ -31,7 +36,7 @@ make -j4
 make install
 
 cd ..
-rm -r swig
+rm -rf swig
 
 # get ipopt
 wget http://www.coin-or.org/download/source/Ipopt/Ipopt-3.12.3.tgz
@@ -69,7 +74,7 @@ cd ..
 cd ..
 
 rm Ipopt-3.12.3.tgz
-rm -r Ipopt-3.12.3
+rm -rf Ipopt-3.12.3
 
 # setup compiler
 export SWIG_HOME=$HOME/build-casadi-win-matlab/swig-matlab-install

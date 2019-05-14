@@ -1,5 +1,10 @@
 set -e
 
+if [ -z "${MATLAB_ROOT}" ]; then
+   echo "You need to set MATLAB_ROOT environment variable to directory of your Matlab installation."
+   exit 1
+fi
+
 sudo apt-get update -qq
 sudo apt-get install p7zip-full -y
 sudo apt-get install bison -y
@@ -9,7 +14,7 @@ sudo apt-get install -y libblas-dev liblapack-dev libxml2-dev
 sudo apt-get install -y fakeroot rpm alien
 
 rm -rf $HOME/build-casadi-linux-matlab
-mkdir build-casadi-linux-matlab
+mkdir $HOME/build-casadi-linux-matlab
 cd $HOME/build-casadi-linux-matlab
 
 # get ipopt
@@ -47,7 +52,7 @@ cd ..
 cd ..
 
 rm Ipopt-3.12.3.tgz
-rm -r Ipopt-3.12.3
+rm -rf Ipopt-3.12.3
 
 # swig matlab
 sudo apt-get install -y libpcre3-dev automake yodl
@@ -59,15 +64,12 @@ make -j4
 make install
 cd ..
 
-rm -r swig
+rm -rf swig
 
 # setup compiler
 export SWIG_HOME=$HOME/build-casadi-linux-matlab/swig-install
 export PATH=$SWIG_HOME/bin:$SWIG_HOME/share:$PATH
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$HOME/build-casadi-linux-matlab/ipopt-install/lib/pkgconfig
-
-# get matlab
-export MATLAB_ROOT=$HOME/matlab
 
 # compile
 git clone https://github.com/casadi/casadi.git --depth=1
