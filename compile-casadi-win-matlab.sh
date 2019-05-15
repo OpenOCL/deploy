@@ -1,4 +1,5 @@
-# This build script compiles Ipopt and CasADi for Windows (64bit).
+# This build script compiles Ipopt and CasADi for Windows (64bit) using MinGW.
+#
 # Many features of CasADi will not be included. Only the following packages
 # and interfaces are included:
 #   - Ipopt
@@ -20,6 +21,10 @@
 #
 # The build directory will be created in the home directory with the name
 # build-casadi-linux-matlab.
+#
+# To be able to use MinGW to compile casadi we need to replace a CMakeLists file
+# for the SWIG interface and we need to provide a toolchain file for cmake that
+# sets up the x86_64-w64-mingw32-gcc-posix compiler.
 #
 # Original source: https://github.com/OpenOCL/ocl-deployment/
 # MIT License
