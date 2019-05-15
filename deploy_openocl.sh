@@ -72,7 +72,7 @@ rm -rf casadi-install
 
 cp README openocl
 cd openocl
-zip -r -q ../openocl-${OCL_VERSION}-linux.zip .
+zip -r -q ../OpenOCL-${OCL_VERSION}-linux.zip .
 cd ..
 rm -rf openocl/lib
 
@@ -85,6 +85,6 @@ rm -rf casadi-install
 
 cp README openocl
 cd openocl
-zip -r -q ../openocl-${OCL_VERSION}-win.zip .
+zip -r -q ../OpenOCL-${OCL_VERSION}-win.zip .
 cd ..
 rm -rf openocl/lib
