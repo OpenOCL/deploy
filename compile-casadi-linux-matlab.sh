@@ -93,7 +93,6 @@ if [ ! -f "IPOPT_COMPLETE" ]; then
   cd ..
 
   rm Ipopt-3.12.3.tgz
-  rm -rf Ipopt-3.12.3
   touch IPOPT_COMPLETE
 
 fi # IPOPT_COMPLETE
@@ -112,7 +111,6 @@ if [ ! -f "SWIG_COMPLETE" ]; then
   make install
   cd ..
 
-  rm -rf swig
   touch SWIG_COMPLETE
 
 fi # SWIG_COMPLETE
@@ -141,7 +139,6 @@ if [ ! -f "CASADI_COMPLETE" ]; then
 
   cd ..
   cd ..
-  rm -r casadi
 
   touch CASADI_COMPLETE
 
