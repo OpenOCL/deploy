@@ -27,7 +27,7 @@ rm openocl/README.md
 
 mkdir casadi
 cd casadi
-wget https://github.com/casadi/casadi/archive/master.zip
+wget https://github.com/casadi/casadi/archive/master.zip -O casadi_master.zip
 cd ..
 
 mkdir ipopt

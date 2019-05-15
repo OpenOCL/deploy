@@ -68,6 +68,7 @@ if [ ! -f "IPOPT_COMPLETE" ]; then
 
   rm -rf $HOME/build-casadi-linux-matlab/ipopt-install
   rm -rf Ipopt-3.12.3
+  rm -f Ipopt-3.12.3.tgz
 
   wget http://www.coin-or.org/download/source/Ipopt/Ipopt-3.12.3.tgz
   tar -xf Ipopt-3.12.3.tgz

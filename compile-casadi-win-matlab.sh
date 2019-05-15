@@ -53,6 +53,7 @@ fi
 # copy patches to the build directory
 cp CMakeListsWinMatlab.txt $HOME/build-casadi-win-matlab
 cp toolchain-casadi.cmake $HOME/build-casadi-win-matlab
+cp toolchain-lapack.cmake $HOME/build-casadi-win-matlab
 
 cd $HOME/build-casadi-win-matlab
 
@@ -76,6 +77,7 @@ fi # APT_COMPLETE
 if [ ! -f "SWIG_COMPLETE" ]; then
 
   # compile swig executable to run on Linux (not swig.exe!)
+  rm -f IPOPT_COMPLETE
   rm -rf $HOME/build-casadi-win-matlab/swig-install
   rm -rf swig
 
@@ -97,6 +99,8 @@ if [ ! -f "IPOPT_COMPLETE" ]; then
 
   rm -rf $HOME/build-casadi-win-matlab/ipopt-install
   rm -rf Ipopt-3.12.3
+  rm -f Ipopt-3.12.3.tgz
+  rm -f CASADI_COMPLETE
 
   wget http://www.coin-or.org/download/source/Ipopt/Ipopt-3.12.3.tgz
   tar -xf Ipopt-3.12.3.tgz
@@ -142,6 +146,21 @@ if [ ! -f "CASADI_COMPLETE" ]; then
 
   rm -rf $HOME/build-casadi-win-matlab/casadi-install
   rm -rf casadi
+  rm -rf lapack-3.4.2
+  rm -f lapack-3.4.2.tgz
+
+  wget http://www.coin-or.org/BuildTools/Lapack/lapack-3.4.2.tgz
+  tar -xf lapack-3.4.2.tgz
+  cd lapack-3.4.2
+  mkdir build
+  cd build
+  cmake -DCMAKE_TOOLCHAIN_FILE=../../toolchain-lapack.cmake -DCMAKE_INSTALL_PREFIX=$HOME/build-casadi-win-matlab/lapack-install ..
+  make -j4
+  make install
+  cd ..
+  cd ..
+
+  rm -f lapack-3.4.2.tgz
 
   export SWIG_HOME="$HOME/build-casadi-win-matlab/swig-install"
   export PATH="$SWIG_HOME/bin:$SWIG_HOME/share:$PATH"
@@ -161,8 +180,9 @@ if [ ! -f "CASADI_COMPLETE" ]; then
   cp ../toolchain-casadi.cmake .
   cd build
   cmake -DCMAKE_INSTALL_PREFIX=$HOME/build-casadi-win-matlab/casadi-install -DMATLAB_EXTRA_CXXFLAGS=\"-D__STDC_UTF_16__\"  \
+      -DBLA_STATIC=ON -DBLA_VENDOR=Generic -DBLA_DIR=$HOME/build-casadi-win-matlab/lapack-install -DENABLE_STATIC=OFF -DENABLE_SHARED=ON\
       -DCMAKE_TOOLCHAIN_FILE=../toolchain-casadi.cmake -DWITH_OSQP=OFF -DWITH_THREAD_MINGW=OFF \
-      -DWITH_THREAD=ON -DWITH_AMPL=OFF -DCMAKE_BUILD_TYPE=Release -DWITH_SO_VERSION=OFF \
+      -DWITH_THREAD=ON -DWITH_AMPL=OFF -DCMAKE_BUILD_TYPE=Release \
       -DWITH_NO_QPOASES_BANNER=ON -DWITH_COMMON=ON -DWITH_HPMPC=OFF -DWITH_BUILD_HPMPC=OFF \
       -DWITH_BLASFEO=OFF -DWITH_BUILD_BLASFEO=OFF -DINSTALL_INTERNAL_HEADERS=ON -DWITH_IPOPT=ON \
       -DWITH_OPENMP=ON -DWITH_SELFCONTAINED=ON -DWITH_DEEPBIND=ON -DWITH_MATLAB=ON -DWITH_DOC=OFF \
