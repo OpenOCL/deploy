@@ -1,5 +1,8 @@
 # This build script compiles Ipopt and CasADi for Windows (64bit) using MinGW.
 #
+# Arguments:
+#   - version string (Optional, defaults to current datetime)
+#
 # Many features of CasADi will not be included. Only the following packages
 # and interfaces are included:
 #   - Ipopt
@@ -31,6 +34,12 @@
 #
 # Author: Jonas Koenemann
 set -e
+
+if [ -z "$1" ]; then
+  VERSION_STR=$(date +"%Y%m%d%H%M")
+else
+  VERSION_STR=$1
+fi
 
 if [ -z "${MATLAB_ROOT}" ]; then
    echo "You need to set MATLAB_ROOT environment variable to directory of your Matlab installation."
@@ -169,7 +178,7 @@ fi # CASADI_COMPLETE
 
 
 export datestr=$(date +"%Y%m%d%H%M%")
-zip -r casadi-3.4.5-win-matlab-ipopt-minimal-${datestr}.zip casadi-install
+zip -r casadi-3.4.5-win-matlab-ipopt-minimal-${VERSION_STR}.zip casadi-install
 
 cd $HOME
-cp $HOME/build-casadi-win-matlab/casadi-3.4.5-win-matlab-ipopt-minimal-${datestr}.zip .
+cp $HOME/build-casadi-win-matlab/casadi-3.4.5-win-matlab-ipopt-minimal-${VERSION_STR}.zip .

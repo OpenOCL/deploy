@@ -1,3 +1,9 @@
+sh compile-casadi-linux-matlab.sh
+sh compile-casadi-win-matlab.sh
+
+
+
+
 rm -rf ./ocl_tmp
 rm -rf ./archives_tmp
 rm -rf ./output
