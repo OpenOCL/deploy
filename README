@@ -20,7 +20,6 @@ examples in the folder Examples.
 All the best
 The OpenOCL developers
 
-
 OpenOCL Release 4.21, 2019/05/15
 
 The project is at the time of the release being developed at University of
@@ -29,13 +28,22 @@ Freiburg, Germany, under the supervision of Prof. Moritz Diehl.
 Main developer:
   Jonas Koenemann, https://github.com/jkoendev, Jonas.Koenemann@imtek.de
 
+Systems Control and Optimization Laboratory,
+Department of Microsystems Engineering (IMTEK) and Department of Mathematics,
+University of Freiburg, Georges-Koehler-Allee 102, 79110 Freiburg, Germany
+
+This research was supported by the German Federal Ministry for Economic
+Affairs and Energy (BMWi) via eco4wind (0324125B) and DyConPV (0324166B),
+and by DFG via Research Unit FOR 2401.
+
 The project has received funding from the European Union’s Horizon 2020
 research and innovation programme under the Marie Sklodowska-Curie grant
 agreement No 642682.
 
 OpenOCL: Copyright 2019 Jonas Koenemann, Moritz Diehl, University of Freiburg
 
-openocl.org
+https://openocl.org
+https://www.syscop.de/
 https://github.com/jkoendev
 https://github.com/OpenOCL/OpenOCL
 
