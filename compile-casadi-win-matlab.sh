@@ -9,6 +9,10 @@ if [ ! -e "$HOME/build-casadi-win-matlab" ]; then
   mkdir $HOME/build-casadi-win-matlab
 fi
 
+# copy patches to the build directory
+cp CMakeListsWinMatlab.txt $HOME/build-casadi-win-matlab
+cp toolchain-casadi.cmake $HOME/build-casadi-win-matlab
+
 cd $HOME/build-casadi-win-matlab
 
 if [ ! -f "APT_COMPLETE" ]; then
@@ -28,12 +32,10 @@ if [ ! -f "APT_COMPLETE" ]; then
 
 fi # APT_COMPLETE
 
-
-cp CMakeListsWinMatlab.txt $HOME/build-casadi-win-matlab
-cp toolchain-casadi.cmake $HOME/build-casadi-win-matlab
-
-
 if [ ! -f "SWIG_COMPLETE" ]; then
+
+  rm -rf $HOME/build-casadi-win-matlab/swig-install
+  rm -rf swig
 
   # swig matlab w pcre
   git clone https://github.com/jaeandersson/swig.git --depth=1
@@ -54,6 +56,9 @@ if [ ! -f "SWIG_COMPLETE" ]; then
 fi # SWIG_COMPLETE
 
 if [ ! -f "IPOPT_COMPLETE" ]; then
+
+  rm -rf $HOME/build-casadi-win-matlab/ipopt-install
+  rm -rf Ipopt-3.12.3
 
   wget http://www.coin-or.org/download/source/Ipopt/Ipopt-3.12.3.tgz
   tar -xf Ipopt-3.12.3.tgz
@@ -98,14 +103,18 @@ fi # IPOPT_COMPLETE
 
 if [ ! -f "CASADI_COMPLETE" ]; then
 
-  export SWIG_HOME=${HOME}/build-casadi-win-matlab/swig-install
-  export PATH=${SWIG_HOME}/bin:${SWIG_HOME}/share:${PATH}
-  export PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:${HOME}/build-casadi-win-matlab/ipopt-install/lib/pkgconfig
+  rm -rf $HOME/build-casadi-win-matlab/casadi-install
+  rm -rf casadi
+
+  export SWIG_HOME="$HOME/build-casadi-win-matlab/swig-install"
+  export PATH="$SWIG_HOME/bin:$SWIG_HOME/share:$PATH"
+  export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:$HOME/build-casadi-win-matlab/ipopt-install/lib/pkgconfig"
 
   export LDFLAGS=-static-libstdc++
 
-  git clone --branch 3.4.5 https://github.com/casadi/casadi.git --depth=1
+  git clone https://github.com/casadi/casadi.git --depth=1
 
+  # copy CMakeLists patch
   mv casadi/swig/matlab/CMakeLists.txt casadi/swig/matlab/CMakeLists_bkp.txt
   cp CMakeListsWinMatlab.txt casadi/swig/matlab/CMakeLists.txt
 

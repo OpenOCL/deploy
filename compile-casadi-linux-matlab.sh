@@ -28,6 +28,9 @@ fi # APT_COMPLETE
 
 if [ ! -f "IPOPT_COMPLETE" ]; then
 
+  rm -rf $HOME/build-casadi-linux-matlab/ipopt-install
+  rm -rf Ipopt-3.12.3
+
   wget http://www.coin-or.org/download/source/Ipopt/Ipopt-3.12.3.tgz
   tar -xf Ipopt-3.12.3.tgz
   cd Ipopt-3.12.3
@@ -69,6 +72,9 @@ fi # IPOPT_COMPLETE
 
 if [ ! -f "SWIG_COMPLETE" ]; then
 
+  rm -rf $HOME/build-casadi-linux-matlab/swig-install
+  rm -rf swig
+
   sudo apt-get install -y libpcre3-dev automake yodl
   git clone --depth=1 https://github.com/jaeandersson/swig.git
   cd swig
@@ -85,9 +91,12 @@ fi # SWIG_COMPLETE
 
 if [ ! -f "CASADI_COMPLETE" ]; then
 
-  export SWIG_HOME=${HOME}/build-casadi-linux-matlab/swig-install
-  export PATH=${SWIG_HOME}/bin:${SWIG_HOME}/share:${PATH}
-  export PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:${HOME}/build-casadi-linux-matlab/ipopt-install/lib/pkgconfig
+  rm -rf $HOME/build-casadi-linux-matlab/casadi-install
+  rm -rf casadi
+
+  export SWIG_HOME="$HOME/build-casadi-win-matlab/swig-install"
+  export PATH="$SWIG_HOME/bin:$SWIG_HOME/share:$PATH"
+  export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:$HOME/build-casadi-win-matlab/ipopt-install/lib/pkgconfig"
 
   git clone https://github.com/casadi/casadi.git --depth=1
   cd casadi
