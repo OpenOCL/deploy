@@ -49,6 +49,7 @@ if [ ! -f "APT_COMPLETE" ]; then
   sudo apt-get install -y python-dev python-numpy python-scipy python-matplotlib libmumps-seq-dev
   sudo apt-get install -y libblas-dev liblapack-dev libxml2-dev
   sudo apt-get install -y fakeroot rpm alien
+  sudo apt-get install -y libpcre3-dev automake yodl
 
   touch APT_COMPLETE
 
@@ -102,7 +103,6 @@ if [ ! -f "SWIG_COMPLETE" ]; then
   rm -rf $HOME/build-casadi-linux-matlab/swig-install
   rm -rf swig
 
-  sudo apt-get install -y libpcre3-dev automake yodl
   git clone --depth=1 https://github.com/jaeandersson/swig.git
   cd swig
   ./autogen.sh

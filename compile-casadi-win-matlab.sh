@@ -66,17 +66,15 @@ fi # APT_COMPLETE
 
 if [ ! -f "SWIG_COMPLETE" ]; then
 
+  # compile swig executable to run on Linux (not swig.exe!)
   rm -rf $HOME/build-casadi-win-matlab/swig-install
   rm -rf swig
 
   # swig matlab w pcre
   git clone https://github.com/jaeandersson/swig.git --depth=1
   cd swig
-  wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.42.tar.gz
-  sh Tools/pcre-build.sh --host=x86_64 CC=x86_64-w64-mingw32-gcc CXX=x86_64-w64-mingw32-g++
   ./autogen.sh
-  ./configure --prefix=$HOME/build-casadi-win-matlab/swig-install \
-      --host=x86_64 CC=x86_64-w64-mingw32-gcc CXX=x86_64-w64-mingw32-g++
+  ./configure --prefix=$HOME/build-casadi-win-matlab/swig-install
   make -j4
   make install
 
@@ -141,6 +139,7 @@ if [ ! -f "CASADI_COMPLETE" ]; then
   export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:$HOME/build-casadi-win-matlab/ipopt-install/lib/pkgconfig"
 
   export LDFLAGS=-static-libstdc++
+  export CFLAGS="$CFLAGS -DCPXSIZE_BITS=32"
 
   git clone https://github.com/casadi/casadi.git --depth=1
 
