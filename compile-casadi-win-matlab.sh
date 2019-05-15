@@ -1,3 +1,30 @@
+# This build script compiles Ipopt and CasADi for Windows (64bit).
+# Many features of CasADi will not be included. Only the following packages
+# and interfaces are included:
+#   - Ipopt
+#     - Metis
+#     - Blas
+#     - Lapack
+#     - Mumps
+#   - CasADi
+#     - Matlab interface
+#     - OpenMP
+#     - Ipopt interface
+#
+# SWIG is used to create the Matlab interface but the library is not included
+# in the final archive.
+#
+# The script remember when it completes step by dropping files in the build
+# directory. You can enforce recompilation by removing the _COMPLETE files or
+# deleting the whole build directory.
+#
+# The build directory will be created in the home directory with the name
+# build-casadi-linux-matlab.
+#
+# Original source: https://github.com/OpenOCL/ocl-deployment/
+# MIT License
+#
+# Author: Jonas Koenemann
 set -e
 
 if [ -z "${MATLAB_ROOT}" ]; then
