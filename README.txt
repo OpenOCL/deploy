@@ -6,24 +6,30 @@ You received a copy of OpenOCL in the form of ready to use binaries. OpenOCL is 
 
 We would there like to ask you (as the user) to have a look at the attributions below, and recognize the work of the used software in OpenOCL, and cite the given papers in academic work.
 
-You can find the source code of the included software in the folder *third_party*. You can find the license information at the top of the source files, or in a LICENSE or README file in directory.
+You can find the source code of the included software in the folder *third_party*. You can find the license information at the top of the source files, or in a LICENSE or README file in directory. The paths to the source code, and weblinks to the software are given below.
 
 Best
 The OpenOCL developers
 
-OpenOCL: Copyright 2019 Jonas Koenemann, University of Freiburg
+OpenOCL: Copyright 2019 Jonas Koenemann, University of Freiburg, openocl.org
 
+https://github.com/jkoendev
+https://github.com/OpenOCL/OpenOCL
 
 ## Attributions to the software used in OpenOCL
 
 ### CasADi 
+
+https://casadi.org
 
 Source-code in third_party/casadi
 
 If you use CasADi in your academic work, please cite the following paper:
 @Article{Andersson2018, Author = {Joel A E Andersson and Joris Gillis and Greg Horn and James B Rawlings and Moritz Diehl}, Title = {{CasADi} -- {A} software framework for nonlinear optimization and optimal control}, Journal = {Mathematical Programming Computation}, Year = {In Press, 2018}, }
 
-### ipopt
+### Ipopt
+
+https://github.com/coin-or/Ipopt
 
 Source-code in third_party/ipopt
 
@@ -116,6 +122,8 @@ In this respect, the user's attention is drawn to the risks associated with load
 The fact that you are presently reading this means that you have had knowledge of the CeCILL-C license and that you accept its terms.
 
 ### SWIG (Matlab)
+
+Swig is technically not distributed with OpenOCL but it is used to generate the Matlab interface for CasADi.
 
 https://github.com/jaeandersson/swig
 
