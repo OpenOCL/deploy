@@ -66,25 +66,25 @@ mv metis openocl/ThirdParty/metis
 # Linux
 rm -f openocl-${OCL_VERSION}-linux.zip
 unzip -q $HOME/casadi-3.4.5-linux-matlab-ipopt-minimal-${OCL_VERSION}.zip
-mkdir openocl/lib
-cp -r casadi-install/casadi/* openocl/lib
+mkdir openocl/Lib
+cp -r casadi-install/casadi/* openocl/Lib
 rm -rf casadi-install
 
 cp README openocl
 cd openocl
 zip -r -q ../OpenOCL-${OCL_VERSION}-linux.zip .
 cd ..
-rm -rf openocl/lib
+rm -rf openocl/Lib
 
 # Windows
 rm -f openocl-${OCL_VERSION}-win.zip
 unzip -q $HOME/casadi-3.4.5-win-matlab-ipopt-minimal-${OCL_VERSION}.zip
-mkdir openocl/lib
-cp -r casadi-install/casadi/* openocl/lib
+mkdir openocl/Lib
+cp -r casadi-install/casadi/* openocl/Lib
 rm -rf casadi-install
 
 cp README openocl
 cd openocl
 zip -r -q ../OpenOCL-${OCL_VERSION}-win.zip .
 cd ..
-rm -rf openocl/lib
+rm -rf openocl/Lib
