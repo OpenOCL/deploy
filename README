@@ -1,13 +1,14 @@
 Dear User,
 
-You received a copy of OpenOCL in the form of ready to use binaries. OpenOCL is a free
-and open-source software that itself relies on and uses other open-source software.
-We would like to comply with the licenses of the included software, and we are trying
-to give attribution to the used software as much as we can.
+You received a copy of OpenOCL in the form of ready to use binaries. OpenOCL
+is a free and open-source software that itself relies on and uses other
+open-source software.
+We would like to comply with the licenses of the included software, and we
+are trying to give attribution to the used software as much as we can.
 
-We would therefore like to ask you (as the user) to have a look at the attributions below,
-and recognize the work of the used software in OpenOCL, and cite the given papers
-in academic work.
+We would therefore like to ask you (as the user) to have a look at the
+attributions below, and recognize the work of the used software in
+OpenOCL, and cite the given papers in academic work.
 
 You can find the source code of the included software in the folder *ThirdParty*.
 You can find the license information at the top of the source files, or in a
@@ -56,13 +57,16 @@ https://casadi.org
 Source-code in ThirdParty/casadi
 
 If you use CasADi in your academic work, please cite the following paper:
-@Article{Andersson2018, Author = {Joel A E Andersson and Joris Gillis and Greg Horn
-and James B Rawlings and Moritz Diehl},
-Title = {{CasADi} -- {A} software framework for nonlinear optimization and optimal control},
-Journal = {Mathematical Programming Computation}, Year = {In Press, 2018}, }
+@Article{Andersson2018, Author = {Joel A E Andersson and Joris Gillis and
+Greg Horn and James B Rawlings and Moritz Diehl},
+Title = {{CasADi} -- {A} software framework for nonlinear optimization and
+optimal control},
+Journal = {Mathematical Programming Computation},
+Year = {In Press, 2018}, }
 
-CasADi comes with some external software. You can find the source code and license information
-for the software used by casadi in ThirdParty/casadi/external_packages
+CasADi comes with some external software. You can find the source code and
+license information for the software used by casadi
+in ThirdParty/casadi/external_packages
 
 Software packages in CasADi:
   - Sundials
@@ -84,11 +88,11 @@ For licensing information for files in this directory, please see the
 comments in the header of each file. For licensing of files in each of
 the subdirectories, please see the LICENSE file in that subdirectory.
 
-Since a lot of time and effort has gone into Ipopt's development, please cite the
-following publication if you are using Ipopt for your own research:
-A. Wächter and L. T. Biegler, On the Implementation of a Primal-Dual Interior Point
-Filter Line Search Algorithm for Large-Scale Nonlinear Programming, Mathematical
-Programming 106(1), pp. 25-57, 2006 (preprint)
+Since a lot of time and effort has gone into Ipopt's development, please cite
+the following publication if you are using Ipopt for your own research:
+A. Wächter and L. T. Biegler, On the Implementation of a Primal-Dual Interior
+Point Filter Line Search Algorithm for Large-Scale Nonlinear Programming,
+Mathematical Programming 106(1), pp. 25-57, 2006 (preprint)
 
 ### BLAS
 
@@ -98,7 +102,8 @@ Source code in ThirdParty/blas
 
 The reference BLAS is a freely-available software package. It is available from
 netlib via anonymous ftp and the World Wide Web. Thus, it can be included in
-commercial software packages (and has been). We only ask that proper credit be given to the authors.
+commercial software packages (and has been). We only ask that proper credit be
+given to the authors.
 
 Like all software, it is copyrighted. It is not trademarked, but we do ask the
 following:
