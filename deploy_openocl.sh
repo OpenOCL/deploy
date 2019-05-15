@@ -12,8 +12,8 @@ export MATLAB_ROOT=$HOME/matlab-install-R2016a
 sh compile-casadi-win-matlab.sh ${OCL_VERSION}
 
 datestr=$(date +"%Y%m%d%H%M")
-
 mkdir $HOME/openocl-deploy-$datestr
+cp README $HOME/openocl-deploy-$datestr
 cd $HOME/openocl-deploy-$datestr
 
 # get source code
@@ -64,24 +64,26 @@ cd metis
 cd ..
 
 cd ..
-cd .. # in openocl
+cd .. # in openocl-deploy-*
 
 # Linux
-unzip $HOME/casadi-3.4.5-linux-matlab-ipopt-minimal-${OCL_VERSION}.zip
-cp -r openocl openocl-linux
-openocl-linux/lib
-cp -r casadi-install/* openocl-linux/lib
+rm -f openocl-${OCL_VERSION}-linux.zip
+unzip -q $HOME/casadi-3.4.5-linux-matlab-ipopt-minimal-${OCL_VERSION}.zip
+mkdir openocl/lib
+cp -r casadi-install/* openocl/lib
 rm -rf casadi-install
 
-cp ../README .
-zip -r openocl-${OCL_VERSION}-linux.zip openocl-linux
+cp README openocl
+zip -r -q openocl-${OCL_VERSION}-linux.zip openocl
+rm -rf openocl/lib
 
 # Windows
-unzip $HOME/casadi-3.4.5-win-matlab-ipopt-minimal-${OCL_VERSION}.zip
-cp -r openocl openocl-win
-openocl-win/lib
-cp -r casadi-install/* openocl-win/lib
+rm -f openocl-${OCL_VERSION}-win.zip
+unzip -q $HOME/casadi-3.4.5-win-matlab-ipopt-minimal-${OCL_VERSION}.zip
+mkdir openocl/lib
+cp -r casadi-install/casadi/* openocl/lib
 rm -rf casadi-install
 
-cp ../README .
-zip -r openocl-${OCL_VERSION}-win.zip openocl-win
+cp README openocl
+zip -r -q openocl-${OCL_VERSION}-win.zip openocl
+rm -rf openocl/lib
