@@ -1,8 +1,8 @@
 # Open Optimal Control Library
 
-Dear User, 
+Dear User,
 
-You received a copy of OpenOCL in the form of ready to use binaries. OpenOCL is a free and open-source software that itself relies on and uses other open-source software. We would like to comply with the licenses of the included software, and we are trying to give attribution to the used software as much as we can. 
+You received a copy of OpenOCL in the form of ready to use binaries. OpenOCL is a free and open-source software that itself relies on and uses other open-source software. We would like to comply with the licenses of the included software, and we are trying to give attribution to the used software as much as we can.
 
 We would there like to ask you (as the user) to have a look at the attributions below, and recognize the work of the used software in OpenOCL, and cite the given papers in academic work.
 
@@ -18,14 +18,29 @@ https://github.com/OpenOCL/OpenOCL
 
 ## Attributions to the software used in OpenOCL
 
-### CasADi 
+### CasADi
 
 https://casadi.org
 
 Source-code in third_party/casadi
 
 If you use CasADi in your academic work, please cite the following paper:
-@Article{Andersson2018, Author = {Joel A E Andersson and Joris Gillis and Greg Horn and James B Rawlings and Moritz Diehl}, Title = {{CasADi} -- {A} software framework for nonlinear optimization and optimal control}, Journal = {Mathematical Programming Computation}, Year = {In Press, 2018}, }
+@Article{Andersson2018, Author = {Joel A E Andersson and Joris Gillis and Greg Horn and James B Rawlings and Moritz Diehl},
+Title = {{CasADi} -- {A} software framework for nonlinear optimization and optimal control},
+Journal = {Mathematical Programming Computation}, Year = {In Press, 2018}, }
+
+CasADi comes with some external software. You can find the source code and license information
+for the software used by casadi in third_party/casadi/external_packages
+
+Included software is:
+  - Sundials
+  - Blasfeo
+  - Csparse
+  - HPMPC
+  - TinyXML
+  - Lapack
+  - blockSQP
+  - Snopt interface
 
 ### Ipopt
 
@@ -72,7 +87,7 @@ If you modify the source for these routines we ask that you change the name of t
 
 We will gladly answer any questions regarding the software. If a modification is done, however, it is the responsibility of the person who modified the routine to provide support.
 
-### Metis 
+### Metis
 
 http://glaros.dtc.umn.edu/gkhome/metis/metis/overview
 
@@ -140,7 +155,7 @@ in the file LICENSE-UNIVERSITIES. You must observe the terms of
 these licenses, as well as the terms of the GNU General Public License,
 when you distribute SWIG.
 
-The SWIG library and examples, under the Lib and Examples top level 
+The SWIG library and examples, under the Lib and Examples top level
 directories, are distributed under the following terms:
 
   You may copy, modify, distribute, and make derivative works based on
@@ -151,5 +166,3 @@ directories, are distributed under the following terms:
 
 See the COPYRIGHT file for a list of contributors to SWIG and their
 copyright notices.
-
-
