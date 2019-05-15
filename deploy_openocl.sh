@@ -22,6 +22,7 @@ cd openocl_repo
 git checkout-index -a -f --prefix=../openocl/
 cd ..
 rm -rf openocl_repo
+rm openocl/.gitignore
 
 git clone https://github.com/jaeandersson/swig.git swig_repo --depth=1
 cd swig_repo
@@ -70,11 +71,13 @@ cd .. # in openocl-deploy-*
 rm -f openocl-${OCL_VERSION}-linux.zip
 unzip -q $HOME/casadi-3.4.5-linux-matlab-ipopt-minimal-${OCL_VERSION}.zip
 mkdir openocl/lib
-cp -r casadi-install/* openocl/lib
+cp -r casadi-install/casadi/* openocl/lib
 rm -rf casadi-install
 
 cp README openocl
-zip -r -q openocl-${OCL_VERSION}-linux.zip openocl
+cd openocl
+zip -r -q ../openocl-${OCL_VERSION}-linux.zip .
+cd ..
 rm -rf openocl/lib
 
 # Windows
@@ -85,5 +88,7 @@ cp -r casadi-install/casadi/* openocl/lib
 rm -rf casadi-install
 
 cp README openocl
-zip -r -q openocl-${OCL_VERSION}-win.zip openocl
+cd openocl
+zip -r -q ../openocl-${OCL_VERSION}-win.zip .
+cd ..
 rm -rf openocl/lib

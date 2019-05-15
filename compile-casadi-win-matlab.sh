@@ -176,9 +176,8 @@ if [ ! -f "CASADI_COMPLETE" ]; then
   touch CASADI_COMPLETE
 fi # CASADI_COMPLETE
 
-
-export datestr=$(date +"%Y%m%d%H%M%")
-zip -r casadi-3.4.5-win-matlab-ipopt-minimal-${VERSION_STR}.zip casadi-install
+rm -f casadi-3.4.5-win-matlab-ipopt-minimal-${VERSION_STR}.zip
+zip -r -q casadi-3.4.5-win-matlab-ipopt-minimal-${VERSION_STR}.zip casadi-install
 
 cd $HOME
 cp $HOME/build-casadi-win-matlab/casadi-3.4.5-win-matlab-ipopt-minimal-${VERSION_STR}.zip .

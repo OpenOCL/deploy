@@ -153,8 +153,8 @@ if [ ! -f "CASADI_COMPLETE" ]; then
 
 fi # CASADI_COMPLETE
 
-
-zip -r casadi-3.4.5-linux-matlab-ipopt-minimal-${VERSION_STR}.zip casadi-install
+rm -f casadi-3.4.5-linux-matlab-ipopt-minimal-${VERSION_STR}.zip
+zip -r -q casadi-3.4.5-linux-matlab-ipopt-minimal-${VERSION_STR}.zip casadi-install
 
 cd $HOME
 cp $HOME/build-casadi-linux-matlab/casadi-3.4.5-linux-matlab-ipopt-minimal-${VERSION_STR}.zip .
