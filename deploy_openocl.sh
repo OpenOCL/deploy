@@ -16,56 +16,52 @@ mkdir $HOME/openocl-deploy-$datestr
 cp README $HOME/openocl-deploy-$datestr
 cd $HOME/openocl-deploy-$datestr
 
-# get source code
+# get source codes
 git clone https://github.com/OpenOCL/OpenOCL.git openocl_repo
 cd openocl_repo
 git checkout-index -a -f --prefix=../openocl/
 cd ..
 rm -rf openocl_repo
 rm openocl/.gitignore
+rm openocl/README.md
 
-git clone https://github.com/jaeandersson/swig.git swig_repo --depth=1
-cd swig_repo
-git checkout-index -a -f --prefix=../openocl/ThirdParty/swig/
+mkdir casadi
+cd casadi
+wget https://github.com/casadi/casadi/archive/master.zip
 cd ..
-rm -rf swig_repo
 
-git clone https://github.com/casadi/casadi.git casadi_repo --depth=1
-cd casadi_repo
-git checkout-index -a -f --prefix=../openocl/ThirdParty/casadi/
-cd ..
-rm -rf casadi_repo
-
-cd openocl
-cd ThirdParty
-
+mkdir ipopt
+cd ipopt
 wget http://www.coin-or.org/download/source/Ipopt/Ipopt-3.12.3.tgz
-tar -xf Ipopt-3.12.3.tgz
-rm Ipopt-3.12.3.tgz
-mv Ipopt-3.12.3 ipopt
+cd ..
 
 mkdir blas
 cd blas
-../ipopt/ThirdParty/Blas/get.Blas
+wget http://www.netlib.org/blas/blas.tgz
 cd ..
 
 mkdir lapack
 cd lapack
-../ipopt/ThirdParty/Lapack/get.Lapack
+wget http://www.netlib.org/lapack/lapack-3.4.2.tgz
 cd ..
 
 mkdir mumps
 cd mumps
-../ipopt/ThirdParty/Mumps/get.Mumps
+wget http://mumps.enseeiht.fr/MUMPS_4.10.0.tar.gz
 cd ..
 
 mkdir metis
 cd metis
-../ipopt/ThirdParty/Metis/get.Metis
+wget http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/OLD/metis-4.0.3.tar.gz
 cd ..
 
-cd ..
-cd .. # in openocl-deploy-*
+mkdir openocl/ThirdParty
+mv casadi openocl/ThirdParty/casadi
+mv ipopt openocl/ThirdParty/ipopt
+mv blas openocl/ThirdParty/blas
+mv lapack openocl/ThirdParty/lapack
+mv mumps openocl/ThirdParty/mumps
+mv metis openocl/ThirdParty/metis
 
 # Linux
 rm -f openocl-${OCL_VERSION}-linux.zip
