@@ -54,6 +54,7 @@ fi
 cp CMakeListsWinMatlab.txt $HOME/build-casadi-win-matlab
 cp toolchain-casadi.cmake $HOME/build-casadi-win-matlab
 cp toolchain-lapack.cmake $HOME/build-casadi-win-matlab
+cp dlopen.patch $HOME/build-casadi-win-matlab
 
 cd $HOME/build-casadi-win-matlab
 
@@ -105,6 +106,9 @@ if [ ! -f "IPOPT_COMPLETE" ]; then
   wget http://www.coin-or.org/download/source/Ipopt/Ipopt-3.12.3.tgz
   tar -xf Ipopt-3.12.3.tgz
   cd Ipopt-3.12.3
+
+  patch -p1 < ../dlopen.patch
+
   cd ThirdParty
 
   cd Metis

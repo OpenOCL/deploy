@@ -46,6 +46,9 @@ if [ ! -e "$HOME/build-casadi-linux-matlab" ]; then
   mkdir $HOME/build-casadi-linux-matlab
 fi
 
+# copy patches to the build directory
+cp dlopen.patch $HOME/build-casadi-linux-matlab
+
 cd $HOME/build-casadi-linux-matlab
 
 
@@ -73,6 +76,9 @@ if [ ! -f "IPOPT_COMPLETE" ]; then
   wget http://www.coin-or.org/download/source/Ipopt/Ipopt-3.12.3.tgz
   tar -xf Ipopt-3.12.3.tgz
   cd Ipopt-3.12.3
+
+  patch -1 < ../dlopen.patch
+  
   cd ThirdParty
 
   cd Metis
