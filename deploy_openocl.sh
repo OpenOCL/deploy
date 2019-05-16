@@ -1,9 +1,9 @@
 # the paths to matlab are tailored to my personal machine
-OCL_VERSION=4.21
+OCL_VERSION=4.23
 
 # compile casadi for linux
 rm -f $HOME/casadi-3.4.5-linux-matlab-ipopt-minimal-${OCL_VERSION}.zip
-export MATLAB_ROOT=$HOME/matlab
+export MATLAB_ROOT=$HOME/matlab-linux-2014b
 sh compile-casadi-linux-matlab.sh ${OCL_VERSION}
 
 # compile casadi for windows

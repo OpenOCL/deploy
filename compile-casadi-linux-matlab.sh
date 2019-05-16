@@ -63,6 +63,8 @@ if [ ! -f "APT_COMPLETE" ]; then
   sudo apt-get install -y fakeroot rpm alien
   sudo apt-get install -y libpcre3-dev automake yodl
 
+  sudo apt-get install -y binutils gcc-4.8 g++-4.8 gfortran-4.8 git cmake liblapack-dev ipython python-dev python-numpy python-scipy python-matplotlib libmumps-seq-dev libblas-dev liblapack-dev libxml2-dev
+
   touch APT_COMPLETE
 
 fi # APT_COMPLETE
@@ -77,7 +79,7 @@ if [ ! -f "IPOPT_COMPLETE" ]; then
   tar -xf Ipopt-3.12.3.tgz
   cd Ipopt-3.12.3
 
-  patch -p1 < ../dlopen.patch
+  # patch -p1 < ../dlopen.patch
 
   cd ThirdParty
 
@@ -140,9 +142,14 @@ if [ ! -f "CASADI_COMPLETE" ]; then
   export PATH="$SWIG_HOME/bin:$SWIG_HOME/share:$PATH"
   export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:$HOME/build-casadi-linux-matlab/ipopt-install/lib/pkgconfig"
 
+  export CC=gcc-4.8
+  export CXX=g++-4.8
+  export FC=gfortran-4.8
+
   git clone https://github.com/casadi/casadi.git --depth=1
   cd casadi
   mkdir build
+  mkdir -p build/swig/matlab/ && touch build/swig/matlab/SwigGet.m
   cd build
   cmake -DCMAKE_INSTALL_PREFIX=$HOME/build-casadi-linux-matlab/casadi-install -DWITH_OSQP=OFF \
       -DWITH_THREAD_MINGW=OFF -DWITH_THREAD=ON -DWITH_AMPL=OFF -DCMAKE_BUILD_TYPE=Release \
