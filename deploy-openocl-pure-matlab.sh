@@ -1,11 +1,10 @@
-OCL_VERSION=4.24
+OCL_VERSION=4.25
 
-datestr=$(date +"%Y%m%d%H%M")
-mkdir $HOME/openocl-deploy-pure-$datestr
+mkdir $HOME/openocl-deploy-pure-$OCL_VERSION
 
-cp README_PURE $HOME/openocl-deploy-pure-$datestr
+cp README_PURE $HOME/openocl-deploy-pure-$OCL_VERSION
 
-cd $HOME/openocl-deploy-pure-$datestr
+cd $HOME/openocl-deploy-pure-$OCL_VERSION
 
 git clone https://github.com/OpenOCL/OpenOCL.git openocl_repo
 cd openocl_repo
