@@ -77,8 +77,8 @@ if [ ! -f "IPOPT_COMPLETE" ]; then
   tar -xf Ipopt-3.12.3.tgz
   cd Ipopt-3.12.3
 
-  patch -1 < ../dlopen.patch
-  
+  patch -p1 < ../dlopen.patch
+
   cd ThirdParty
 
   cd Metis
