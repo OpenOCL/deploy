@@ -1,4 +1,4 @@
-OCL_VERSION=4.23
+OCL_VERSION=4.24
 
 datestr=$(date +"%Y%m%d%H%M")
 mkdir $HOME/openocl-deploy-pure-$datestr
