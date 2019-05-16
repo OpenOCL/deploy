@@ -1,4 +1,4 @@
-OCL_VERSION=4.26
+OCL_VERSION=4.27
 
 mkdir $HOME/openocl-deploy-pure-$OCL_VERSION
 
