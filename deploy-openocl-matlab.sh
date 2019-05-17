@@ -21,5 +21,5 @@ mv README ./openocl/README
 mv version.m ./openocl/+ocl/
 
 cd openocl
-zip -r -q ../OpenOCL-${OCL_VERSION}.zip .
+zip -r -q ../OpenOCL-v${OCL_VERSION}.zip .
 cd ..
