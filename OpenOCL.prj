@@ -1,5 +1,5 @@
 <deployment-project plugin="plugin.toolbox" plugin-version="1.0">
-  <configuration build-checksum="713985510" file="C:\Users\Jonas\Desktop\OpenOCL v4.28.prj" location="C:\Users\Jonas\Desktop" name="OpenOCL v4.28" target="target.toolbox" target-name="Package Toolbox">
+  <configuration build-checksum="713985510" file="C:\Users\Jonas\Documents\repos\ocl-deployment\OpenOCL.prj" location="C:\Users\Jonas\Documents\repos\ocl-deployment" name="OpenOCL" target="target.toolbox" target-name="Package Toolbox">
     <param.appname>OpenOCL</param.appname>
     <param.authnamewatermark>Jonas Koenemann</param.authnamewatermark>
     <param.email>Jonas.Koenemann@imtek.de</param.email>
@@ -25,8 +25,8 @@ https://openocl.org
 https://www.syscop.de/
 https://github.com/jkoendev
 https://github.com/OpenOCL/OpenOCL</param.description>
-    <param.screenshot>${PROJECT_ROOT}\robo.png</param.screenshot>
-    <param.version>4.29</param.version>
+    <param.screenshot />
+    <param.version>4.30</param.version>
     <param.output>${PROJECT_ROOT}\OpenOCL.mltbx</param.output>
     <param.products.name />
     <param.products.id />
@@ -43,6 +43,7 @@ https://github.com/OpenOCL/OpenOCL</param.description>
       <param.authnamewatermark />
       <param.email />
       <param.company />
+      <param.screenshot />
       <param.output />
       <param.products.name />
       <param.products.id />
@@ -56,25 +57,23 @@ https://github.com/OpenOCL/OpenOCL</param.description>
       <param.matlabpath.excludes />
     </unset>
     <fileset.rootdir>
-      <file>D:\software\OpenOCL-4.29</file>
+      <file>${PROJECT_ROOT}\export\OpenOCL</file>
     </fileset.rootdir>
     <fileset.rootfiles>
-      <file>D:\software\OpenOCL-4.29\+ocl</file>
-      <file>D:\software\OpenOCL-4.29\CasadiLibrary</file>
-      <file>D:\software\OpenOCL-4.29\Core</file>
-      <file>D:\software\OpenOCL-4.29\Examples</file>
-      <file>D:\software\OpenOCL-4.29\Lib</file>
-      <file>D:\software\OpenOCL-4.29\LICENSE</file>
-      <file>D:\software\OpenOCL-4.29\README</file>
-      <file>D:\software\OpenOCL-4.29\StartupOCL.m</file>
-      <file>D:\software\OpenOCL-4.29\Test</file>
-      <file>D:\software\OpenOCL-4.29\Workspace</file>
+      <file>${PROJECT_ROOT}\export\OpenOCL\+ocl</file>
+      <file>${PROJECT_ROOT}\export\OpenOCL\CasadiLibrary</file>
+      <file>${PROJECT_ROOT}\export\OpenOCL\Core</file>
+      <file>${PROJECT_ROOT}\export\OpenOCL\Examples</file>
+      <file>${PROJECT_ROOT}\export\OpenOCL\LICENSE</file>
+      <file>${PROJECT_ROOT}\export\OpenOCL\README</file>
+      <file>${PROJECT_ROOT}\export\OpenOCL\StartupOCL.m</file>
+      <file>${PROJECT_ROOT}\export\OpenOCL\Test</file>
     </fileset.rootfiles>
     <fileset.depfun.included />
     <fileset.depfun.excluded />
     <fileset.package />
     <build-deliverables>
-      <file location="C:\Users\Jonas\Desktop" name="OpenOCL.mltbx" optional="false">C:\Users\Jonas\Desktop\OpenOCL.mltbx</file>
+      <file location="C:\Users\Jonas\Documents\repos\ocl-deployment" name="OpenOCL.mltbx" optional="false">C:\Users\Jonas\Documents\repos\ocl-deployment\OpenOCL.mltbx</file>
     </build-deliverables>
     <workflow />
     <matlab>
