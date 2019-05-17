@@ -1,0 +1,100 @@
+<deployment-project plugin="plugin.toolbox" plugin-version="1.0">
+  <configuration build-checksum="713985510" file="C:\Users\Jonas\Desktop\OpenOCL v4.28.prj" location="C:\Users\Jonas\Desktop" name="OpenOCL v4.28" target="target.toolbox" target-name="Package Toolbox">
+    <param.appname>OpenOCL</param.appname>
+    <param.authnamewatermark>Jonas Koenemann</param.authnamewatermark>
+    <param.email>Jonas.Koenemann@imtek.de</param.email>
+    <param.company>University of Freiburg</param.company>
+    <param.summary>Open Optimal Control Library for Matlab, Octave. Model-predictive control (MPC) and Trajectory optimization software.</param.summary>
+    <param.description>Copyright 2019 Jonas Koenemann, Moritz Diehl, University of Freiburg
+Redistribution is permitted under the 3-Clause BSD License terms. Please
+ensure the above copyright notice is visible in any derived work.
+
+The project is at the time of the release being developed at University of
+Freiburg, Germany, under the supervision of Prof. Moritz Diehl.
+
+Main developer:
+  Jonas Koenemann, https://github.com/jkoendev, Jonas.Koenemann@imtek.de
+
+Systems Control and Optimization Laboratory,
+Department of Microsystems Engineering (IMTEK) and Department of Mathematics,
+University of Freiburg, Georges-Koehler-Allee 102, 79110 Freiburg, Germany
+
+OpenOCL: Copyright 2019 Jonas Koenemann, Moritz Diehl, University of Freiburg
+
+https://openocl.org
+https://www.syscop.de/
+https://github.com/jkoendev
+https://github.com/OpenOCL/OpenOCL</param.description>
+    <param.screenshot>${PROJECT_ROOT}\robo.png</param.screenshot>
+    <param.version>4.29</param.version>
+    <param.output>${PROJECT_ROOT}\OpenOCL.mltbx</param.output>
+    <param.products.name />
+    <param.products.id />
+    <param.products.version />
+    <param.platforms />
+    <param.guid>0725c005-eccc-4886-ba77-052eca5845eb</param.guid>
+    <param.exclude.filters />
+    <param.examples />
+    <param.demosxml />
+    <param.apps />
+    <param.docs />
+    <param.matlabpath.excludes />
+    <unset>
+      <param.authnamewatermark />
+      <param.email />
+      <param.company />
+      <param.output />
+      <param.products.name />
+      <param.products.id />
+      <param.products.version />
+      <param.platforms />
+      <param.exclude.filters />
+      <param.examples />
+      <param.demosxml />
+      <param.apps />
+      <param.docs />
+      <param.matlabpath.excludes />
+    </unset>
+    <fileset.rootdir>
+      <file>D:\software\OpenOCL-4.29</file>
+    </fileset.rootdir>
+    <fileset.rootfiles>
+      <file>D:\software\OpenOCL-4.29\+ocl</file>
+      <file>D:\software\OpenOCL-4.29\CasadiLibrary</file>
+      <file>D:\software\OpenOCL-4.29\Core</file>
+      <file>D:\software\OpenOCL-4.29\Examples</file>
+      <file>D:\software\OpenOCL-4.29\Lib</file>
+      <file>D:\software\OpenOCL-4.29\LICENSE</file>
+      <file>D:\software\OpenOCL-4.29\README</file>
+      <file>D:\software\OpenOCL-4.29\StartupOCL.m</file>
+      <file>D:\software\OpenOCL-4.29\Test</file>
+      <file>D:\software\OpenOCL-4.29\Workspace</file>
+    </fileset.rootfiles>
+    <fileset.depfun.included />
+    <fileset.depfun.excluded />
+    <fileset.package />
+    <build-deliverables>
+      <file location="C:\Users\Jonas\Desktop" name="OpenOCL.mltbx" optional="false">C:\Users\Jonas\Desktop\OpenOCL.mltbx</file>
+    </build-deliverables>
+    <workflow />
+    <matlab>
+      <root>D:\software\matlab-install-R2016a</root>
+      <toolboxes />
+    </matlab>
+    <platform>
+      <unix>false</unix>
+      <mac>false</mac>
+      <windows>true</windows>
+      <win2k>false</win2k>
+      <winxp>false</winxp>
+      <vista>false</vista>
+      <linux>false</linux>
+      <solaris>false</solaris>
+      <osver>6.2</osver>
+      <os32>false</os32>
+      <os64>true</os64>
+      <arch>win64</arch>
+      <matlab>true</matlab>
+    </platform>
+  </configuration>
+</deployment-project>
