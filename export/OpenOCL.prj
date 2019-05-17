@@ -1,6 +1,6 @@
 <deployment-project plugin="plugin.toolbox" plugin-version="1.0">
   <configuration build-checksum="713985510" file="C:\Users\Jonas\Documents\repos\ocl-deployment\OpenOCL.prj" location="C:\Users\Jonas\Documents\repos\ocl-deployment" name="OpenOCL" target="target.toolbox" target-name="Package Toolbox">
-    <param.appname>OpenOCL</param.appname>
+    <param.appname>OpenOCL - Optimal Control Library</param.appname>
     <param.authnamewatermark>Jonas Koenemann</param.authnamewatermark>
     <param.email>Jonas.Koenemann@imtek.de</param.email>
     <param.company>University of Freiburg</param.company>
@@ -25,9 +25,9 @@ https://openocl.org
 https://www.syscop.de/
 https://github.com/jkoendev
 https://github.com/OpenOCL/OpenOCL</param.description>
-    <param.screenshot />
-    <param.version>4.30</param.version>
-    <param.output>${PROJECT_ROOT}\OpenOCL.mltbx</param.output>
+    <param.screenshot>${PROJECT_ROOT}\robo.png</param.screenshot>
+    <param.version>4.31</param.version>
+    <param.output>${PROJECT_ROOT}\OpenOCL - Optimal Control Library.mltbx</param.output>
     <param.products.name />
     <param.products.id />
     <param.products.version />
@@ -43,7 +43,6 @@ https://github.com/OpenOCL/OpenOCL</param.description>
       <param.authnamewatermark />
       <param.email />
       <param.company />
-      <param.screenshot />
       <param.output />
       <param.products.name />
       <param.products.id />
@@ -73,7 +72,7 @@ https://github.com/OpenOCL/OpenOCL</param.description>
     <fileset.depfun.excluded />
     <fileset.package />
     <build-deliverables>
-      <file location="C:\Users\Jonas\Documents\repos\ocl-deployment" name="OpenOCL.mltbx" optional="false">C:\Users\Jonas\Documents\repos\ocl-deployment\OpenOCL.mltbx</file>
+      <file location="C:\Users\Jonas\Documents\repos\ocl-deployment" name="OpenOCL - Optimal Control Library.mltbx" optional="false">C:\Users\Jonas\Documents\repos\ocl-deployment\OpenOCL - Optimal Control Library.mltbx</file>
     </build-deliverables>
     <workflow />
     <matlab>
