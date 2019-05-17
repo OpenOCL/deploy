@@ -1,16 +1,12 @@
-
-
-
-OCL_VERSION=4.28x
-DATESTR=$(date +"%Y/%m/%d")
-DATEVERSION="$OCL_VERSION", "$DATESTR"
+OCL_VERSION=4.29
+DATESTR=$(date +"%Y\/%m\/%d")
+DATEVERSION="$OCL_VERSION, $DATESTR"
 
 mkdir $HOME/openocl-deploy-pure-$OCL_VERSION
 
 # set date and version in readme marked by $dateversion$
 sed "s/#dateversion#/$DATEVERSION/g" README > $HOME/openocl-deploy-pure-$OCL_VERSION/README
-
-cp README_PURE $HOME/openocl-deploy-pure-$OCL_VERSION
+sed "s/#version#/$OCL_VERSION/g" version.m > $HOME/openocl-deploy-pure-$OCL_VERSION/version.m
 
 cd $HOME/openocl-deploy-pure-$OCL_VERSION
 
@@ -21,7 +17,8 @@ cd ..
 rm -rf openocl_repo
 rm openocl/.gitignore
 rm openocl/README.md
-mv README_PURE ./openocl/README
+mv README ./openocl/README
+mv version.m ./openocl/+ocl/
 
 cd openocl
 zip -r -q ../OpenOCL-${OCL_VERSION}.zip .
