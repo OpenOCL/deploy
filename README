@@ -1,19 +1,16 @@
 Dear User,
 
-You received a copy of OpenOCL in the form of ready to use binaries. OpenOCL
+You received a copy of OpenOCL in the form of ready to use code. OpenOCL
 is a free and open-source software that itself relies on and uses other
-open-source software.
-We would like to comply with the licenses of the included software, and we
-are trying to give attribution to the used software as much as we can.
+open-source software. This software is not distributed with this package but
+it will be downloaded through CasADi, given your consent, upon the first time
+running OpenOCL.
+
+We would like to give attribution to the used software as much as we can.
 
 We would therefore like to ask you (as the user) to have a look at the
-attributions below, and recognize the work of the used software in
+attributions below, and recognize the work of the used software by
 OpenOCL, and cite the given papers in academic work.
-
-You can find the source code of the included software in the folder *ThirdParty*.
-You can find the license information at the top of the source files, or in a
-LICENSE or README file in directory. The paths to the source code,
-and weblinks to the software are given below.
 
 For a documentation please go to https://openocl.org/ and have a look at the
 examples in the folder Examples.
@@ -21,7 +18,11 @@ examples in the folder Examples.
 All the best
 The OpenOCL developers
 
-OpenOCL Release 4.21, 2019/05/15
+OpenOCL Release #dateversion#
+
+Copyright 2019 Jonas Koenemann, Moritz Diehl, University of Freiburg
+Redistribution is permitted under the 3-Clause BSD License terms. Please
+ensure the above copyright notice is visible in any derived work.
 
 The project is at the time of the release being developed at University of
 Freiburg, Germany, under the supervision of Prof. Moritz Diehl.
@@ -48,13 +49,12 @@ https://www.syscop.de/
 https://github.com/jkoendev
 https://github.com/OpenOCL/OpenOCL
 
+
 ## Attributions to the software used in OpenOCL
 
 ### CasADi
 
 https://casadi.org
-
-Source-code in ThirdParty/casadi
 
 If you use CasADi in your academic work, please cite the following paper:
 @Article{Andersson2018, Author = {Joel A E Andersson and Joris Gillis and
@@ -82,8 +82,6 @@ Software packages in CasADi:
 
 https://github.com/coin-or/Ipopt
 
-Source-code in ThirdParty/ipopt
-
 For licensing information for files in this directory, please see the
 comments in the header of each file. For licensing of files in each of
 the subdirectories, please see the LICENSE file in that subdirectory.
@@ -97,8 +95,6 @@ Mathematical Programming 106(1), pp. 25-57, 2006 (preprint)
 ### BLAS
 
 http://www.netlib.org/blas/
-
-Source code in ThirdParty/blas
 
 The reference BLAS is a freely-available software package. It is available from
 netlib via anonymous ftp and the World Wide Web. Thus, it can be included in
@@ -119,16 +115,12 @@ routine to provide support.
 
 http://www.netlib.org/lapack/
 
-Source code in ThirdParty/lapack
-
 LAPACK is a freely-available software package. It is available from netlib
 via anonymous ftp and the World Wide Web at http://www.netlib.org/lapack.
 Thus, it can be included in commercial software packages (and has been).
 We only ask that proper credit be given to the authors.
 
-The license used for the software is the modified BSD license, see:
-
-ThirdParty/lapack/LICENSE
+The license used for the software is the modified BSD license
 
 Like all software, it is copyrighted. It is not trademarked, but we do ask
 the following:
@@ -143,8 +135,6 @@ routine to provide support.
 ### Metis
 
 http://glaros.dtc.umn.edu/gkhome/metis/metis/overview
-
-Source-code in ThirdParty/metis
 
 Copyright & License Notice
 ---------------------------
@@ -171,8 +161,6 @@ Computing, Vol. 20, No. 1, pp. 359—392, 1999.
 ### Mumps
 
 http://graal.ens-lyon.fr/MUMPS/
-
-Source-code in ThirdParty/mumps
 
 Copyright 1991-2019 CERFACS, CNRS, ENS Lyon, INP Toulouse, Inria,
 Mumps Technologies, University of Bordeaux.
