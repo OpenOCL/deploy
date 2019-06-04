@@ -32,7 +32,7 @@ https://www.syscop.de/
 https://github.com/jkoendev
 https://github.com/OpenOCL/OpenOCL</param.description>
     <param.screenshot>C:\Users\Jonas\Documents\repos\ocl-deployment\robo.png</param.screenshot>
-    <param.version>4.41</param.version>
+    <param.version>5.01</param.version>
     <param.output>${PROJECT_ROOT}\OpenOCL - Open Optimal Control Library.mltbx</param.output>
     <param.products.name />
     <param.products.id />
