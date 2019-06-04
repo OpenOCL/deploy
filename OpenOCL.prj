@@ -1,5 +1,5 @@
 <deployment-project plugin="plugin.toolbox" plugin-version="1.0">
-  <configuration build-checksum="3201927929" file="C:\Users\Jonas\Documents\repos\ocl-deployment\OpenOCL.prj" location="C:\Users\Jonas\Documents\repos\ocl-deployment" name="OpenOCL" target="target.toolbox" target-name="Package Toolbox">
+  <configuration build-checksum="2485222371" file="C:\Users\Jonas\Documents\repos\ocl-deployment\OpenOCL.prj" location="C:\Users\Jonas\Documents\repos\ocl-deployment" name="OpenOCL" target="target.toolbox" target-name="Package Toolbox">
     <param.appname>OpenOCL - Open Optimal Control Library</param.appname>
     <param.authnamewatermark>Jonas Koenemann</param.authnamewatermark>
     <param.email>Jonas.Koenemann@imtek.de</param.email>
