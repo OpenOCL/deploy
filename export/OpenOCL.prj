@@ -1,11 +1,17 @@
 <deployment-project plugin="plugin.toolbox" plugin-version="1.0">
   <configuration build-checksum="123350356" file="C:\Users\Jonas\Documents\repos\ocl-deployment\export\OpenOCL.prj" location="C:\Users\Jonas\Documents\repos\ocl-deployment\export" name="OpenOCL" target="target.toolbox" target-name="Package Toolbox">
-    <param.appname>OpenOCL - Optimal Control Library</param.appname>
+    <param.appname>OpenOCL - Open Optimal Control Library</param.appname>
     <param.authnamewatermark>Jonas Koenemann</param.authnamewatermark>
     <param.email>Jonas.Koenemann@imtek.de</param.email>
     <param.company>University of Freiburg</param.company>
     <param.summary>Open Optimal Control Library for Matlab, Octave. Model-predictive control (MPC) and Trajectory optimization software.</param.summary>
-    <param.description>Copyright 2019 Jonas Koenemann, Moritz Diehl, University of Freiburg
+    <param.description>Get started by running:
+
+ocl.examples.cartpole
+help ocl
+open mainCartPole
+
+Copyright 2019 Jonas Koenemann, Moritz Diehl, University of Freiburg
 Redistribution is permitted under the 3-Clause BSD License terms. Please
 ensure the above copyright notice is visible in any derived work.
 
@@ -26,19 +32,37 @@ https://www.syscop.de/
 https://github.com/jkoendev
 https://github.com/OpenOCL/OpenOCL</param.description>
     <param.screenshot>C:\Users\Jonas\Documents\repos\ocl-deployment\robo.png</param.screenshot>
-    <param.version>4.32</param.version>
-    <param.output>${PROJECT_ROOT}\OpenOCL - Optimal Control Library.mltbx</param.output>
+    <param.version>4.41</param.version>
+    <param.output>${PROJECT_ROOT}\OpenOCL - Open Optimal Control Library.mltbx</param.output>
     <param.products.name />
     <param.products.id />
     <param.products.version />
     <param.platforms />
     <param.guid>0725c005-eccc-4886-ba77-052eca5845eb</param.guid>
     <param.exclude.filters />
+    <param.exclude.pcodedmfiles>true</param.exclude.pcodedmfiles>
     <param.examples />
     <param.demosxml />
     <param.apps />
-    <param.docs />
+    <param.registered.apps />
+    <param.docs>${PROJECT_ROOT}\OpenOCL\info.xml</param.docs>
+    <param.getting.started.guide>${PROJECT_ROOT}\OpenOCL\doc\GettingStarted.mlx</param.getting.started.guide>
     <param.matlabpath.excludes />
+    <param.javaclasspath.excludes />
+    <param.exported.on.package>false</param.exported.on.package>
+    <param.release.start />
+    <param.release.end />
+    <param.release.current.only>false</param.release.current.only>
+    <param.compatiblity.windows>true</param.compatiblity.windows>
+    <param.compatiblity.macos>true</param.compatiblity.macos>
+    <param.compatiblity.linux>true</param.compatiblity.linux>
+    <param.compatiblity.matlabonline>true</param.compatiblity.matlabonline>
+    <param.installation.map />
+    <param.additional.sw.names />
+    <param.additional.sw.licenses />
+    <param.additional.sw.win.url />
+    <param.additional.sw.mac.url />
+    <param.additional.sw.linux.url />
     <unset>
       <param.authnamewatermark />
       <param.email />
@@ -49,11 +73,27 @@ https://github.com/OpenOCL/OpenOCL</param.description>
       <param.products.version />
       <param.platforms />
       <param.exclude.filters />
+      <param.exclude.pcodedmfiles />
       <param.examples />
       <param.demosxml />
       <param.apps />
-      <param.docs />
+      <param.registered.apps />
       <param.matlabpath.excludes />
+      <param.javaclasspath.excludes />
+      <param.exported.on.package />
+      <param.release.start />
+      <param.release.end />
+      <param.release.current.only />
+      <param.compatiblity.windows />
+      <param.compatiblity.macos />
+      <param.compatiblity.linux />
+      <param.compatiblity.matlabonline />
+      <param.installation.map />
+      <param.additional.sw.names />
+      <param.additional.sw.licenses />
+      <param.additional.sw.win.url />
+      <param.additional.sw.mac.url />
+      <param.additional.sw.linux.url />
     </unset>
     <fileset.rootdir>
       <file>${PROJECT_ROOT}\OpenOCL</file>
@@ -62,22 +102,37 @@ https://github.com/OpenOCL/OpenOCL</param.description>
       <file>${PROJECT_ROOT}\OpenOCL\+ocl</file>
       <file>${PROJECT_ROOT}\OpenOCL\CasadiLibrary</file>
       <file>${PROJECT_ROOT}\OpenOCL\Core</file>
-      <file>${PROJECT_ROOT}\OpenOCL\Examples</file>
+      <file>${PROJECT_ROOT}\OpenOCL\doc</file>
+      <file>${PROJECT_ROOT}\OpenOCL\info.xml</file>
+      <file>${PROJECT_ROOT}\OpenOCL\Lib</file>
       <file>${PROJECT_ROOT}\OpenOCL\LICENSE</file>
+      <file>${PROJECT_ROOT}\OpenOCL\Log</file>
+      <file>${PROJECT_ROOT}\OpenOCL\ocl.m</file>
       <file>${PROJECT_ROOT}\OpenOCL\README</file>
-      <file>${PROJECT_ROOT}\OpenOCL\StartupOCL.m</file>
-      <file>${PROJECT_ROOT}\OpenOCL\Test</file>
     </fileset.rootfiles>
     <fileset.depfun.included />
     <fileset.depfun.excluded />
     <fileset.package />
     <build-deliverables>
-      <file location="C:\Users\Jonas\Documents\repos\ocl-deployment\export" name="OpenOCL - Optimal Control Library.mltbx" optional="false">C:\Users\Jonas\Documents\repos\ocl-deployment\export\OpenOCL - Optimal Control Library.mltbx</file>
+      <file location="C:\Users\Jonas\Documents\repos\ocl-deployment\export" name="OpenOCL - Open Optimal Control Library.mltbx" optional="false">C:\Users\Jonas\Documents\repos\ocl-deployment\export\OpenOCL - Open Optimal Control Library.mltbx</file>
     </build-deliverables>
     <workflow />
     <matlab>
-      <root>D:\software\matlab-install-R2016a</root>
-      <toolboxes />
+      <root>D:\software\matlab-install</root>
+      <toolboxes>
+        <toolbox name="matlabcoder" />
+        <toolbox name="polyspacebugfinder" />
+      </toolboxes>
+      <toolbox>
+        <matlabcoder>
+          <enabled>true</enabled>
+        </matlabcoder>
+      </toolbox>
+      <toolbox>
+        <polyspacebugfinder>
+          <enabled>true</enabled>
+        </polyspacebugfinder>
+      </toolbox>
     </matlab>
     <platform>
       <unix>false</unix>
@@ -88,7 +143,7 @@ https://github.com/OpenOCL/OpenOCL</param.description>
       <vista>false</vista>
       <linux>false</linux>
       <solaris>false</solaris>
-      <osver>6.2</osver>
+      <osver>10.0</osver>
       <os32>false</os32>
       <os64>true</os64>
       <arch>win64</arch>
