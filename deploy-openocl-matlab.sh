@@ -1,5 +1,5 @@
 rm -rf export/OpenOCL/
-OCL_VERSION=5.01
+OCL_VERSION=5.03
 DATESTR=$(date +"%Y\/%m\/%d")
 DATEVERSION="$OCL_VERSION, $DATESTR"
 
