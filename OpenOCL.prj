@@ -1,5 +1,5 @@
 <deployment-project plugin="plugin.toolbox" plugin-version="1.0">
-  <configuration build-checksum="123350356" file="C:\Users\Jonas\Documents\repos\ocl-deployment\export\OpenOCL.prj" location="C:\Users\Jonas\Documents\repos\ocl-deployment\export" name="OpenOCL" target="target.toolbox" target-name="Package Toolbox">
+  <configuration build-checksum="3201927929" file="C:\Users\Jonas\Documents\repos\ocl-deployment\OpenOCL.prj" location="C:\Users\Jonas\Documents\repos\ocl-deployment" name="OpenOCL" target="target.toolbox" target-name="Package Toolbox">
     <param.appname>OpenOCL - Open Optimal Control Library</param.appname>
     <param.authnamewatermark>Jonas Koenemann</param.authnamewatermark>
     <param.email>Jonas.Koenemann@imtek.de</param.email>
@@ -9,7 +9,16 @@
 
 ocl.examples.cartpole
 help ocl
-open mainCartPole
+open ocl.examples.cartpole
+
+Support for:
+ - trajectory optimization
+ - model predictive control
+ - multiple stages and phases
+ - non-uniform staced discretization
+ - time optimal control
+ - parametric optimization
+ - tracking problems
 
 Copyright 2019 Jonas Koenemann, Moritz Diehl, University of Freiburg
 Redistribution is permitted under the 3-Clause BSD License terms. Please
@@ -31,7 +40,7 @@ https://openocl.org
 https://www.syscop.de/
 https://github.com/jkoendev
 https://github.com/OpenOCL/OpenOCL</param.description>
-    <param.screenshot>C:\Users\Jonas\Documents\repos\ocl-deployment\robo.png</param.screenshot>
+    <param.screenshot>${PROJECT_ROOT}\robo.png</param.screenshot>
     <param.version>5.01</param.version>
     <param.output>${PROJECT_ROOT}\OpenOCL - Open Optimal Control Library.mltbx</param.output>
     <param.products.name />
@@ -45,8 +54,8 @@ https://github.com/OpenOCL/OpenOCL</param.description>
     <param.demosxml />
     <param.apps />
     <param.registered.apps />
-    <param.docs>${PROJECT_ROOT}\OpenOCL\info.xml</param.docs>
-    <param.getting.started.guide>${PROJECT_ROOT}\OpenOCL\doc\GettingStarted.mlx</param.getting.started.guide>
+    <param.docs>${PROJECT_ROOT}\export\OpenOCL\info.xml</param.docs>
+    <param.getting.started.guide>${PROJECT_ROOT}\export\OpenOCL\doc\GettingStarted.mlx</param.getting.started.guide>
     <param.matlabpath.excludes />
     <param.javaclasspath.excludes />
     <param.exported.on.package>false</param.exported.on.package>
@@ -96,25 +105,25 @@ https://github.com/OpenOCL/OpenOCL</param.description>
       <param.additional.sw.linux.url />
     </unset>
     <fileset.rootdir>
-      <file>${PROJECT_ROOT}\OpenOCL</file>
+      <file>${PROJECT_ROOT}\export\OpenOCL</file>
     </fileset.rootdir>
     <fileset.rootfiles>
-      <file>${PROJECT_ROOT}\OpenOCL\+ocl</file>
-      <file>${PROJECT_ROOT}\OpenOCL\CasadiLibrary</file>
-      <file>${PROJECT_ROOT}\OpenOCL\Core</file>
-      <file>${PROJECT_ROOT}\OpenOCL\doc</file>
-      <file>${PROJECT_ROOT}\OpenOCL\info.xml</file>
-      <file>${PROJECT_ROOT}\OpenOCL\Lib</file>
-      <file>${PROJECT_ROOT}\OpenOCL\LICENSE</file>
-      <file>${PROJECT_ROOT}\OpenOCL\Log</file>
-      <file>${PROJECT_ROOT}\OpenOCL\ocl.m</file>
-      <file>${PROJECT_ROOT}\OpenOCL\README</file>
+      <file>${PROJECT_ROOT}\export\OpenOCL\+ocl</file>
+      <file>${PROJECT_ROOT}\export\OpenOCL\CasadiLibrary</file>
+      <file>${PROJECT_ROOT}\export\OpenOCL\Core</file>
+      <file>${PROJECT_ROOT}\export\OpenOCL\doc</file>
+      <file>${PROJECT_ROOT}\export\OpenOCL\info.xml</file>
+      <file>${PROJECT_ROOT}\export\OpenOCL\Lib</file>
+      <file>${PROJECT_ROOT}\export\OpenOCL\LICENSE</file>
+      <file>${PROJECT_ROOT}\export\OpenOCL\Log</file>
+      <file>${PROJECT_ROOT}\export\OpenOCL\ocl.m</file>
+      <file>${PROJECT_ROOT}\export\OpenOCL\README</file>
     </fileset.rootfiles>
     <fileset.depfun.included />
     <fileset.depfun.excluded />
     <fileset.package />
     <build-deliverables>
-      <file location="C:\Users\Jonas\Documents\repos\ocl-deployment\export" name="OpenOCL - Open Optimal Control Library.mltbx" optional="false">C:\Users\Jonas\Documents\repos\ocl-deployment\export\OpenOCL - Open Optimal Control Library.mltbx</file>
+      <file location="C:\Users\Jonas\Documents\repos\ocl-deployment" name="OpenOCL - Open Optimal Control Library.mltbx" optional="false">C:\Users\Jonas\Documents\repos\ocl-deployment\OpenOCL - Open Optimal Control Library.mltbx</file>
     </build-deliverables>
     <workflow />
     <matlab>
