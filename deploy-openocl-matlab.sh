@@ -1,11 +1,10 @@
 rm -rf export/OpenOCL/
-OCL_VERSION=5.06
+OCL_VERSION=5.11
 DATESTR=$(date +"%Y\/%m\/%d")
 DATEVERSION="$OCL_VERSION, $DATESTR"
 
 git clone https://github.com/OpenOCL/OpenOCL.git openocl_repo
 cd openocl_repo
-git checkout develop
 git checkout-index -a -f --prefix=../export/OpenOCL/
 cd ..
 rm -rf openocl_repo
