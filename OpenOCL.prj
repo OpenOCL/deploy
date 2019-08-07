@@ -5,7 +5,9 @@
     <param.email>Jonas.Koenemann@imtek.de</param.email>
     <param.company>University of Freiburg</param.company>
     <param.summary>Open Optimal Control Library for Matlab, Octave. Model-predictive control (MPC) and Trajectory optimization software.</param.summary>
-    <param.description>Get started by running:
+    <param.description>OpenOCL v6 now with acados interface!
+
+Get started by running:
 
 ocl.examples.cartpole
 help ocl
@@ -41,7 +43,7 @@ https://www.syscop.de/
 https://github.com/jkoendev
 https://github.com/OpenOCL/OpenOCL</param.description>
     <param.screenshot>${PROJECT_ROOT}\robo.png</param.screenshot>
-    <param.version>5.08</param.version>
+    <param.version>6.01</param.version>
     <param.output>${PROJECT_ROOT}\OpenOCL - Open Optimal Control Library.mltbx</param.output>
     <param.products.name />
     <param.products.id />
@@ -108,8 +110,7 @@ https://github.com/OpenOCL/OpenOCL</param.description>
     </fileset.rootdir>
     <fileset.rootfiles>
       <file>${PROJECT_ROOT}\export\OpenOCL\+ocl</file>
-      <file>${PROJECT_ROOT}\export\OpenOCL\CasadiLibrary</file>
-      <file>${PROJECT_ROOT}\export\OpenOCL\Core</file>
+      <file>${PROJECT_ROOT}\export\OpenOCL\acados_setup.sh</file>
       <file>${PROJECT_ROOT}\export\OpenOCL\doc</file>
       <file>${PROJECT_ROOT}\export\OpenOCL\info.xml</file>
       <file>${PROJECT_ROOT}\export\OpenOCL\Lib</file>
